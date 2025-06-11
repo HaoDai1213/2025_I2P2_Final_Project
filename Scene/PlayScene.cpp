@@ -39,19 +39,15 @@ int rep;
 void PlayScene::Initialize() {
     keyState.clear();
     ticks = 0;
-    deathCountDown = -1;
     lives = 0;
     money = 150;
     SpeedMult = 1;
-    count = 0;
     // Add groups from bottom to top.
-    AddNewObject(TileMapGroup = new Group());
     AddNewObject(GroundEffectGroup = new Group());
     AddNewObject(DebugIndicatorGroup = new Group());
-    AddNewObject(TowerGroup = new Group());
-    AddNewObject(EnemyGroup = new Group());
     AddNewObject(BulletGroup = new Group());
     AddNewObject(EffectGroup = new Group());
+    AddNewObject(NoteGroup = new Group());
     // Should support buttons.
     AddNewControlObject(UIGroup = new Group());
     ReadBullet();
@@ -80,10 +76,9 @@ void PlayScene::Terminate() {
 void PlayScene::Update(float deltaTime) {
     // If we use deltaTime directly, then we might have Bullet-through-paper problem.
     // Reference: Bullet-Through-Paper
-    if (SpeedMult == 0)
-        deathCountDown = -1;
-    else if (deathCountDown != -1)
-        SpeedMult = 1;
+    if (SpeedMult == 0) {
+
+    }
     for (int i = 0; i < SpeedMult; i++) {
         IScene::Update(deltaTime);
         // Check if we should create new enemy.
@@ -128,16 +123,16 @@ void PlayScene::Update(float deltaTime) {
 
     // player
     // the boundary would be changed after the slider of rg part is done
-    if (keyState['W'] && player->Position.y - playerSpeed >= 20) {
+    if (keyState['W'] && player->Position.y - playerSpeed >= 350 + 20) {
         player->Position.y -= playerSpeed;
     }
     if (keyState['A'] && player->Position.x - playerSpeed >= 20) {
         player->Position.x -= playerSpeed;
     }
-    if (keyState['S'] && player->Position.y + playerSpeed <= 13 * BlockSize - 20) {
+    if (keyState['S'] && player->Position.y + playerSpeed <= 650 - 20) {
         player->Position.y += playerSpeed;
     }
-    if (keyState['D'] && player->Position.x + playerSpeed <= 20 * BlockSize - 20) {
+    if (keyState['D'] && player->Position.x + playerSpeed <= 25 * BlockSize - 20) {
         player->Position.x += playerSpeed;
     }
 }
@@ -235,6 +230,10 @@ void PlayScene::ConstructUI() {
     // Text
     UIGroup->AddNewObject(new Engine::Label(std::string("Stage ") + std::to_string(MapId), "pirulen.ttf", 32, 1294, 0));
     UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 1294, 88, 255, 255, 255));
-
+    // Image
+    UIGroup->AddNewObject(new Engine::Image("Play/bar.png", 0, 200, 1600, 150));
+    UIGroup->AddNewObject(new Engine::Image("Play/bar.png", 0, 650, 1600, 150));
+    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 100, 200 + 15, 120, 120));
+    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 100, 650 + 15, 120, 120));
 }
 

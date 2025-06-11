@@ -32,6 +32,8 @@
 [INFO] Loaded Resource<image>: Resource/images/play/player.png
 [INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 32
 [INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 24
+[INFO] Loaded Resource<image>: Resource/images/Play/bar.png scaled to 1600x150
+[INFO] Loaded Resource<image>: Resource/images/Play/judge_area.png scaled to 120x120
 [INFO] Loaded Resource<audio>: Resource/audios/astronomia.ogg
 [INFO] Created<sample_instance>: Resource/audios/astronomia.ogg
 [INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
@@ -41,44 +43,59 @@
 [INFO] 4 is down
 [INFO] 23 is down
 [INFO] 23 is up
-[INFO] 23 is down
-[INFO] 23 is up
-[INFO] 19 is down
 [INFO] 4 is up
+[INFO] 1 is down
+[INFO] 1 is up
+[INFO] 19 is down
+[INFO] 19 is up
 [INFO] Loaded Resource<image>: Resource/images/play/dirty-1.png
 [INFO] Player is hit: 90 hp left
 [INFO] Loaded Resource<audio>: Resource/audios/playerhit.wav
+[INFO] 23 is down
+[INFO] 23 is up
 [INFO] Player is hit: 80 hp left
 [INFO] Player is hit: 70 hp left
+[INFO] 1 is down
+[INFO] 1 is up
+[INFO] 19 is down
 [INFO] Player is hit: 60 hp left
-[INFO] Player is hit: 50 hp left
-[INFO] Player is hit: 40 hp left
-[INFO] Player is hit: 30 hp left
-[INFO] Player is hit: 20 hp left
-[INFO] Player is hit: 10 hp left
-[INFO] Player is hit: 0 hp left
-[INFO] stopped audio (bgm)
-[INFO] Loaded Resource<image>: Resource/images/win/dirt.png scaled to 400x100
-[INFO] Loaded Resource<image>: Resource/images/win/dirt.png
-[INFO] Loaded Resource<image>: Resource/images/win/floor.png
-[INFO] Created<sample_instance>: Resource/audios/astronomia.ogg
-[INFO] Changed to lose scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/select.ogg
-[INFO] Changed to stage-select scene
-[INFO] stopped audio (sample)
-[INFO] Changed to start scene
+[INFO] 19 is up
+[INFO] 1 is down
+[INFO] 1 is up
+[INFO] 19 is down
+[INFO] 19 is up
+[INFO] 1 is down
+[INFO] 19 is down
+[INFO] 1 is up
+[INFO] 4 is down
+[INFO] 19 is up
+[INFO] 1 is down
+[INFO] 4 is up
+[INFO] 4 is down
+[INFO] 1 is up
+[INFO] 1 is down
+[INFO] 4 is up
+[INFO] 4 is down
+[INFO] 1 is up
+[INFO] 1 is down
+[INFO] 4 is up
+[INFO] 4 is down
+[INFO] 1 is up
+[INFO] 1 is down
+[INFO] 1 is up
+[INFO] 4 is up
+[INFO] 219 is down
 [INFO] Game Terminating...
+[INFO] stopped audio (bgm)
 [INFO] Game terminated
 [INFO] Game end
-[INFO] Destroyed Resource<image>: win/dirt.png
 [INFO] Destroyed Resource<image>: play/bullet-7.png
 [INFO] Destroyed Resource<image>: lose/benjamin-happy.png
-[INFO] Destroyed Resource<image>: win/dirt.png?400x100
 [INFO] Destroyed Resource<image>: play/dirty-1.png
-[INFO] Destroyed Resource<image>: win/floor.png
 [INFO] Destroyed Resource<image>: play/target.png
+[INFO] Destroyed Resource<image>: Play/bar.png?1600x150
 [INFO] Destroyed Resource<image>: stage-select/floor.png
+[INFO] Destroyed Resource<image>: Play/judge_area.png?120x120
 [INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
 [INFO] Destroyed Resource<image>: stage-select/dirt.png
 [INFO] Destroyed Resource<image>: icon.png

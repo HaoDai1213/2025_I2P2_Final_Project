@@ -39,20 +39,15 @@ public:
     static const Engine::Point SpawnGridPoint;
     int MapId;
     float ticks;
-    float deathCountDown;
-    int count;
     static int gamescore;
-    bool shovelToggle;
     int playerSpeed;
     // Map tiles.
-    Group *TileMapGroup;
     Group *GroundEffectGroup;
     Group *DebugIndicatorGroup;
     Group *BulletGroup;
-    Group *TowerGroup;
-    Group *EnemyGroup;
     Group *EffectGroup;
     Group *UIGroup;
+    Group *NoteGroup;
     Engine::Label *UIMoney;
     Engine::Label *UILives;
     Engine::Image *imgTarget;
