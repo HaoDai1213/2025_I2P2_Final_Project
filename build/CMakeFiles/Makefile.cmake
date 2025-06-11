@@ -31,7 +31,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-windres.cmake"
   "C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake"
-  "C:/Users/barry/Desktop/2025_I2P2_TowerDefense-main/CMakeLists.txt"
+  "C:/Users/barry/Desktop/2025_I2P2_Final_Project/CMakeLists.txt"
   "CMakeFiles/3.29.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.29.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.29.2/CMakeRCCompiler.cmake"
@@ -51,5 +51,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/2025_I2P2_TowerDefense.dir/DependInfo.cmake"
+  "CMakeFiles/2025_I2P2_Final_Project.dir/DependInfo.cmake"
   )

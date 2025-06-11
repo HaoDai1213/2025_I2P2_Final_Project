@@ -5,8 +5,8 @@
 #include "LOG.hpp"
 #include "Resources.hpp"
 
-float AudioHelper::BGMVolume = 1.0;
-float AudioHelper::SFXVolume = 1.0;
+float AudioHelper::BGMVolume = 0.1; // should be changed to 1.0
+float AudioHelper::SFXVolume = 0.1; // but it explodes my ears so i set it to 0.1 for now
 ALLEGRO_SAMPLE_ID AudioHelper::PlayAudio(const std::string &audio) {
     ALLEGRO_SAMPLE *sample = Engine::Resources::GetInstance().GetSample(audio).get();
     ALLEGRO_SAMPLE_ID id;

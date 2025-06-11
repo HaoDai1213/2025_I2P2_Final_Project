@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\barry\Desktop\2025_I2P2_TowerDefense-main
+CMAKE_SOURCE_DIR = C:\Users\barry\Desktop\2025_I2P2_Final_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\barry\Desktop\2025_I2P2_TowerDefense-main\build
+CMAKE_BINARY_DIR = C:\Users\barry\Desktop\2025_I2P2_Final_Project\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\barry\Desktop\2025_I2P2_TowerDefense-main\build\CMakeFiles C:\Users\barry\Desktop\2025_I2P2_TowerDefense-main\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\barry\Desktop\2025_I2P2_Final_Project\build\CMakeFiles C:\Users\barry\Desktop\2025_I2P2_Final_Project\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\barry\Desktop\2025_I2P2_TowerDefense-main\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\barry\Desktop\2025_I2P2_Final_Project\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 2025_I2P2_TowerDefense
+# Target rules for targets named 2025_I2P2_Final_Project
 
 # Build rule for target.
-2025_I2P2_TowerDefense: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2025_I2P2_TowerDefense
-.PHONY : 2025_I2P2_TowerDefense
+2025_I2P2_Final_Project: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2025_I2P2_Final_Project
+.PHONY : 2025_I2P2_Final_Project
 
 # fast build rule for target.
-2025_I2P2_TowerDefense/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/build
-.PHONY : 2025_I2P2_TowerDefense/fast
+2025_I2P2_Final_Project/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/build
+.PHONY : 2025_I2P2_Final_Project/fast
 
 Bullet/Bullet.obj: Bullet/Bullet.cpp.obj
 .PHONY : Bullet/Bullet.obj
 
 # target to build an object file
 Bullet/Bullet.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Bullet.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Bullet/Bullet.cpp.obj
 .PHONY : Bullet/Bullet.cpp.obj
 
 Bullet/Bullet.i: Bullet/Bullet.cpp.i
@@ -141,7 +141,7 @@ Bullet/Bullet.i: Bullet/Bullet.cpp.i
 
 # target to preprocess a source file
 Bullet/Bullet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Bullet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Bullet/Bullet.cpp.i
 .PHONY : Bullet/Bullet.cpp.i
 
 Bullet/Bullet.s: Bullet/Bullet.cpp.s
@@ -149,7 +149,7 @@ Bullet/Bullet.s: Bullet/Bullet.cpp.s
 
 # target to generate assembly for a file
 Bullet/Bullet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Bullet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Bullet/Bullet.cpp.s
 .PHONY : Bullet/Bullet.cpp.s
 
 Bullet/FireBullet.obj: Bullet/FireBullet.cpp.obj
@@ -157,7 +157,7 @@ Bullet/FireBullet.obj: Bullet/FireBullet.cpp.obj
 
 # target to build an object file
 Bullet/FireBullet.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/FireBullet.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Bullet/FireBullet.cpp.obj
 .PHONY : Bullet/FireBullet.cpp.obj
 
 Bullet/FireBullet.i: Bullet/FireBullet.cpp.i
@@ -165,7 +165,7 @@ Bullet/FireBullet.i: Bullet/FireBullet.cpp.i
 
 # target to preprocess a source file
 Bullet/FireBullet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/FireBullet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Bullet/FireBullet.cpp.i
 .PHONY : Bullet/FireBullet.cpp.i
 
 Bullet/FireBullet.s: Bullet/FireBullet.cpp.s
@@ -173,63 +173,15 @@ Bullet/FireBullet.s: Bullet/FireBullet.cpp.s
 
 # target to generate assembly for a file
 Bullet/FireBullet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/FireBullet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Bullet/FireBullet.cpp.s
 .PHONY : Bullet/FireBullet.cpp.s
-
-Bullet/LaserBullet.obj: Bullet/LaserBullet.cpp.obj
-.PHONY : Bullet/LaserBullet.obj
-
-# target to build an object file
-Bullet/LaserBullet.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/LaserBullet.cpp.obj
-.PHONY : Bullet/LaserBullet.cpp.obj
-
-Bullet/LaserBullet.i: Bullet/LaserBullet.cpp.i
-.PHONY : Bullet/LaserBullet.i
-
-# target to preprocess a source file
-Bullet/LaserBullet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/LaserBullet.cpp.i
-.PHONY : Bullet/LaserBullet.cpp.i
-
-Bullet/LaserBullet.s: Bullet/LaserBullet.cpp.s
-.PHONY : Bullet/LaserBullet.s
-
-# target to generate assembly for a file
-Bullet/LaserBullet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/LaserBullet.cpp.s
-.PHONY : Bullet/LaserBullet.cpp.s
-
-Bullet/Missile.obj: Bullet/Missile.cpp.obj
-.PHONY : Bullet/Missile.obj
-
-# target to build an object file
-Bullet/Missile.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Missile.cpp.obj
-.PHONY : Bullet/Missile.cpp.obj
-
-Bullet/Missile.i: Bullet/Missile.cpp.i
-.PHONY : Bullet/Missile.i
-
-# target to preprocess a source file
-Bullet/Missile.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Missile.cpp.i
-.PHONY : Bullet/Missile.cpp.i
-
-Bullet/Missile.s: Bullet/Missile.cpp.s
-.PHONY : Bullet/Missile.s
-
-# target to generate assembly for a file
-Bullet/Missile.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Missile.cpp.s
-.PHONY : Bullet/Missile.cpp.s
 
 Enemy/Enemy.obj: Enemy/Enemy.cpp.obj
 .PHONY : Enemy/Enemy.obj
 
 # target to build an object file
 Enemy/Enemy.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/Enemy.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/Enemy.cpp.obj
 .PHONY : Enemy/Enemy.cpp.obj
 
 Enemy/Enemy.i: Enemy/Enemy.cpp.i
@@ -237,7 +189,7 @@ Enemy/Enemy.i: Enemy/Enemy.cpp.i
 
 # target to preprocess a source file
 Enemy/Enemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/Enemy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/Enemy.cpp.i
 .PHONY : Enemy/Enemy.cpp.i
 
 Enemy/Enemy.s: Enemy/Enemy.cpp.s
@@ -245,63 +197,15 @@ Enemy/Enemy.s: Enemy/Enemy.cpp.s
 
 # target to generate assembly for a file
 Enemy/Enemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/Enemy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/Enemy.cpp.s
 .PHONY : Enemy/Enemy.cpp.s
-
-Enemy/MechEnemy.obj: Enemy/MechEnemy.cpp.obj
-.PHONY : Enemy/MechEnemy.obj
-
-# target to build an object file
-Enemy/MechEnemy.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/MechEnemy.cpp.obj
-.PHONY : Enemy/MechEnemy.cpp.obj
-
-Enemy/MechEnemy.i: Enemy/MechEnemy.cpp.i
-.PHONY : Enemy/MechEnemy.i
-
-# target to preprocess a source file
-Enemy/MechEnemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/MechEnemy.cpp.i
-.PHONY : Enemy/MechEnemy.cpp.i
-
-Enemy/MechEnemy.s: Enemy/MechEnemy.cpp.s
-.PHONY : Enemy/MechEnemy.s
-
-# target to generate assembly for a file
-Enemy/MechEnemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/MechEnemy.cpp.s
-.PHONY : Enemy/MechEnemy.cpp.s
-
-Enemy/PlaneEnemy.obj: Enemy/PlaneEnemy.cpp.obj
-.PHONY : Enemy/PlaneEnemy.obj
-
-# target to build an object file
-Enemy/PlaneEnemy.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/PlaneEnemy.cpp.obj
-.PHONY : Enemy/PlaneEnemy.cpp.obj
-
-Enemy/PlaneEnemy.i: Enemy/PlaneEnemy.cpp.i
-.PHONY : Enemy/PlaneEnemy.i
-
-# target to preprocess a source file
-Enemy/PlaneEnemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/PlaneEnemy.cpp.i
-.PHONY : Enemy/PlaneEnemy.cpp.i
-
-Enemy/PlaneEnemy.s: Enemy/PlaneEnemy.cpp.s
-.PHONY : Enemy/PlaneEnemy.s
-
-# target to generate assembly for a file
-Enemy/PlaneEnemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/PlaneEnemy.cpp.s
-.PHONY : Enemy/PlaneEnemy.cpp.s
 
 Enemy/SoldierEnemy.obj: Enemy/SoldierEnemy.cpp.obj
 .PHONY : Enemy/SoldierEnemy.obj
 
 # target to build an object file
 Enemy/SoldierEnemy.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/SoldierEnemy.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/SoldierEnemy.cpp.obj
 .PHONY : Enemy/SoldierEnemy.cpp.obj
 
 Enemy/SoldierEnemy.i: Enemy/SoldierEnemy.cpp.i
@@ -309,7 +213,7 @@ Enemy/SoldierEnemy.i: Enemy/SoldierEnemy.cpp.i
 
 # target to preprocess a source file
 Enemy/SoldierEnemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/SoldierEnemy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/SoldierEnemy.cpp.i
 .PHONY : Enemy/SoldierEnemy.cpp.i
 
 Enemy/SoldierEnemy.s: Enemy/SoldierEnemy.cpp.s
@@ -317,39 +221,15 @@ Enemy/SoldierEnemy.s: Enemy/SoldierEnemy.cpp.s
 
 # target to generate assembly for a file
 Enemy/SoldierEnemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/SoldierEnemy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/SoldierEnemy.cpp.s
 .PHONY : Enemy/SoldierEnemy.cpp.s
-
-Enemy/TankEnemy.obj: Enemy/TankEnemy.cpp.obj
-.PHONY : Enemy/TankEnemy.obj
-
-# target to build an object file
-Enemy/TankEnemy.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/TankEnemy.cpp.obj
-.PHONY : Enemy/TankEnemy.cpp.obj
-
-Enemy/TankEnemy.i: Enemy/TankEnemy.cpp.i
-.PHONY : Enemy/TankEnemy.i
-
-# target to preprocess a source file
-Enemy/TankEnemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/TankEnemy.cpp.i
-.PHONY : Enemy/TankEnemy.cpp.i
-
-Enemy/TankEnemy.s: Enemy/TankEnemy.cpp.s
-.PHONY : Enemy/TankEnemy.s
-
-# target to generate assembly for a file
-Enemy/TankEnemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/TankEnemy.cpp.s
-.PHONY : Enemy/TankEnemy.cpp.s
 
 Engine/Allegro5Exception.obj: Engine/Allegro5Exception.cpp.obj
 .PHONY : Engine/Allegro5Exception.obj
 
 # target to build an object file
 Engine/Allegro5Exception.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Allegro5Exception.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Allegro5Exception.cpp.obj
 .PHONY : Engine/Allegro5Exception.cpp.obj
 
 Engine/Allegro5Exception.i: Engine/Allegro5Exception.cpp.i
@@ -357,7 +237,7 @@ Engine/Allegro5Exception.i: Engine/Allegro5Exception.cpp.i
 
 # target to preprocess a source file
 Engine/Allegro5Exception.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Allegro5Exception.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Allegro5Exception.cpp.i
 .PHONY : Engine/Allegro5Exception.cpp.i
 
 Engine/Allegro5Exception.s: Engine/Allegro5Exception.cpp.s
@@ -365,7 +245,7 @@ Engine/Allegro5Exception.s: Engine/Allegro5Exception.cpp.s
 
 # target to generate assembly for a file
 Engine/Allegro5Exception.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Allegro5Exception.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Allegro5Exception.cpp.s
 .PHONY : Engine/Allegro5Exception.cpp.s
 
 Engine/AudioHelper.obj: Engine/AudioHelper.cpp.obj
@@ -373,7 +253,7 @@ Engine/AudioHelper.obj: Engine/AudioHelper.cpp.obj
 
 # target to build an object file
 Engine/AudioHelper.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/AudioHelper.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/AudioHelper.cpp.obj
 .PHONY : Engine/AudioHelper.cpp.obj
 
 Engine/AudioHelper.i: Engine/AudioHelper.cpp.i
@@ -381,7 +261,7 @@ Engine/AudioHelper.i: Engine/AudioHelper.cpp.i
 
 # target to preprocess a source file
 Engine/AudioHelper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/AudioHelper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/AudioHelper.cpp.i
 .PHONY : Engine/AudioHelper.cpp.i
 
 Engine/AudioHelper.s: Engine/AudioHelper.cpp.s
@@ -389,7 +269,7 @@ Engine/AudioHelper.s: Engine/AudioHelper.cpp.s
 
 # target to generate assembly for a file
 Engine/AudioHelper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/AudioHelper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/AudioHelper.cpp.s
 .PHONY : Engine/AudioHelper.cpp.s
 
 Engine/Collider.obj: Engine/Collider.cpp.obj
@@ -397,7 +277,7 @@ Engine/Collider.obj: Engine/Collider.cpp.obj
 
 # target to build an object file
 Engine/Collider.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Collider.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Collider.cpp.obj
 .PHONY : Engine/Collider.cpp.obj
 
 Engine/Collider.i: Engine/Collider.cpp.i
@@ -405,7 +285,7 @@ Engine/Collider.i: Engine/Collider.cpp.i
 
 # target to preprocess a source file
 Engine/Collider.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Collider.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Collider.cpp.i
 .PHONY : Engine/Collider.cpp.i
 
 Engine/Collider.s: Engine/Collider.cpp.s
@@ -413,7 +293,7 @@ Engine/Collider.s: Engine/Collider.cpp.s
 
 # target to generate assembly for a file
 Engine/Collider.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Collider.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Collider.cpp.s
 .PHONY : Engine/Collider.cpp.s
 
 Engine/GameEngine.obj: Engine/GameEngine.cpp.obj
@@ -421,7 +301,7 @@ Engine/GameEngine.obj: Engine/GameEngine.cpp.obj
 
 # target to build an object file
 Engine/GameEngine.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/GameEngine.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/GameEngine.cpp.obj
 .PHONY : Engine/GameEngine.cpp.obj
 
 Engine/GameEngine.i: Engine/GameEngine.cpp.i
@@ -429,7 +309,7 @@ Engine/GameEngine.i: Engine/GameEngine.cpp.i
 
 # target to preprocess a source file
 Engine/GameEngine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/GameEngine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/GameEngine.cpp.i
 .PHONY : Engine/GameEngine.cpp.i
 
 Engine/GameEngine.s: Engine/GameEngine.cpp.s
@@ -437,7 +317,7 @@ Engine/GameEngine.s: Engine/GameEngine.cpp.s
 
 # target to generate assembly for a file
 Engine/GameEngine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/GameEngine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/GameEngine.cpp.s
 .PHONY : Engine/GameEngine.cpp.s
 
 Engine/Group.obj: Engine/Group.cpp.obj
@@ -445,7 +325,7 @@ Engine/Group.obj: Engine/Group.cpp.obj
 
 # target to build an object file
 Engine/Group.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Group.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Group.cpp.obj
 .PHONY : Engine/Group.cpp.obj
 
 Engine/Group.i: Engine/Group.cpp.i
@@ -453,7 +333,7 @@ Engine/Group.i: Engine/Group.cpp.i
 
 # target to preprocess a source file
 Engine/Group.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Group.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Group.cpp.i
 .PHONY : Engine/Group.cpp.i
 
 Engine/Group.s: Engine/Group.cpp.s
@@ -461,7 +341,7 @@ Engine/Group.s: Engine/Group.cpp.s
 
 # target to generate assembly for a file
 Engine/Group.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Group.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Group.cpp.s
 .PHONY : Engine/Group.cpp.s
 
 Engine/IControl.obj: Engine/IControl.cpp.obj
@@ -469,7 +349,7 @@ Engine/IControl.obj: Engine/IControl.cpp.obj
 
 # target to build an object file
 Engine/IControl.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IControl.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/IControl.cpp.obj
 .PHONY : Engine/IControl.cpp.obj
 
 Engine/IControl.i: Engine/IControl.cpp.i
@@ -477,7 +357,7 @@ Engine/IControl.i: Engine/IControl.cpp.i
 
 # target to preprocess a source file
 Engine/IControl.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IControl.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/IControl.cpp.i
 .PHONY : Engine/IControl.cpp.i
 
 Engine/IControl.s: Engine/IControl.cpp.s
@@ -485,7 +365,7 @@ Engine/IControl.s: Engine/IControl.cpp.s
 
 # target to generate assembly for a file
 Engine/IControl.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IControl.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/IControl.cpp.s
 .PHONY : Engine/IControl.cpp.s
 
 Engine/IObject.obj: Engine/IObject.cpp.obj
@@ -493,7 +373,7 @@ Engine/IObject.obj: Engine/IObject.cpp.obj
 
 # target to build an object file
 Engine/IObject.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IObject.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/IObject.cpp.obj
 .PHONY : Engine/IObject.cpp.obj
 
 Engine/IObject.i: Engine/IObject.cpp.i
@@ -501,7 +381,7 @@ Engine/IObject.i: Engine/IObject.cpp.i
 
 # target to preprocess a source file
 Engine/IObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IObject.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/IObject.cpp.i
 .PHONY : Engine/IObject.cpp.i
 
 Engine/IObject.s: Engine/IObject.cpp.s
@@ -509,7 +389,7 @@ Engine/IObject.s: Engine/IObject.cpp.s
 
 # target to generate assembly for a file
 Engine/IObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IObject.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/IObject.cpp.s
 .PHONY : Engine/IObject.cpp.s
 
 Engine/IScene.obj: Engine/IScene.cpp.obj
@@ -517,7 +397,7 @@ Engine/IScene.obj: Engine/IScene.cpp.obj
 
 # target to build an object file
 Engine/IScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IScene.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/IScene.cpp.obj
 .PHONY : Engine/IScene.cpp.obj
 
 Engine/IScene.i: Engine/IScene.cpp.i
@@ -525,7 +405,7 @@ Engine/IScene.i: Engine/IScene.cpp.i
 
 # target to preprocess a source file
 Engine/IScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/IScene.cpp.i
 .PHONY : Engine/IScene.cpp.i
 
 Engine/IScene.s: Engine/IScene.cpp.s
@@ -533,7 +413,7 @@ Engine/IScene.s: Engine/IScene.cpp.s
 
 # target to generate assembly for a file
 Engine/IScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/IScene.cpp.s
 .PHONY : Engine/IScene.cpp.s
 
 Engine/LOG.obj: Engine/LOG.cpp.obj
@@ -541,7 +421,7 @@ Engine/LOG.obj: Engine/LOG.cpp.obj
 
 # target to build an object file
 Engine/LOG.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/LOG.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/LOG.cpp.obj
 .PHONY : Engine/LOG.cpp.obj
 
 Engine/LOG.i: Engine/LOG.cpp.i
@@ -549,7 +429,7 @@ Engine/LOG.i: Engine/LOG.cpp.i
 
 # target to preprocess a source file
 Engine/LOG.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/LOG.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/LOG.cpp.i
 .PHONY : Engine/LOG.cpp.i
 
 Engine/LOG.s: Engine/LOG.cpp.s
@@ -557,7 +437,7 @@ Engine/LOG.s: Engine/LOG.cpp.s
 
 # target to generate assembly for a file
 Engine/LOG.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/LOG.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/LOG.cpp.s
 .PHONY : Engine/LOG.cpp.s
 
 Engine/Point.obj: Engine/Point.cpp.obj
@@ -565,7 +445,7 @@ Engine/Point.obj: Engine/Point.cpp.obj
 
 # target to build an object file
 Engine/Point.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Point.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Point.cpp.obj
 .PHONY : Engine/Point.cpp.obj
 
 Engine/Point.i: Engine/Point.cpp.i
@@ -573,7 +453,7 @@ Engine/Point.i: Engine/Point.cpp.i
 
 # target to preprocess a source file
 Engine/Point.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Point.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Point.cpp.i
 .PHONY : Engine/Point.cpp.i
 
 Engine/Point.s: Engine/Point.cpp.s
@@ -581,7 +461,7 @@ Engine/Point.s: Engine/Point.cpp.s
 
 # target to generate assembly for a file
 Engine/Point.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Point.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Point.cpp.s
 .PHONY : Engine/Point.cpp.s
 
 Engine/Resources.obj: Engine/Resources.cpp.obj
@@ -589,7 +469,7 @@ Engine/Resources.obj: Engine/Resources.cpp.obj
 
 # target to build an object file
 Engine/Resources.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Resources.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Resources.cpp.obj
 .PHONY : Engine/Resources.cpp.obj
 
 Engine/Resources.i: Engine/Resources.cpp.i
@@ -597,7 +477,7 @@ Engine/Resources.i: Engine/Resources.cpp.i
 
 # target to preprocess a source file
 Engine/Resources.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Resources.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Resources.cpp.i
 .PHONY : Engine/Resources.cpp.i
 
 Engine/Resources.s: Engine/Resources.cpp.s
@@ -605,7 +485,7 @@ Engine/Resources.s: Engine/Resources.cpp.s
 
 # target to generate assembly for a file
 Engine/Resources.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Resources.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Resources.cpp.s
 .PHONY : Engine/Resources.cpp.s
 
 Engine/Sprite.obj: Engine/Sprite.cpp.obj
@@ -613,7 +493,7 @@ Engine/Sprite.obj: Engine/Sprite.cpp.obj
 
 # target to build an object file
 Engine/Sprite.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Sprite.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Sprite.cpp.obj
 .PHONY : Engine/Sprite.cpp.obj
 
 Engine/Sprite.i: Engine/Sprite.cpp.i
@@ -621,7 +501,7 @@ Engine/Sprite.i: Engine/Sprite.cpp.i
 
 # target to preprocess a source file
 Engine/Sprite.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Sprite.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Sprite.cpp.i
 .PHONY : Engine/Sprite.cpp.i
 
 Engine/Sprite.s: Engine/Sprite.cpp.s
@@ -629,15 +509,39 @@ Engine/Sprite.s: Engine/Sprite.cpp.s
 
 # target to generate assembly for a file
 Engine/Sprite.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Sprite.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Sprite.cpp.s
 .PHONY : Engine/Sprite.cpp.s
+
+Player/Player.obj: Player/Player.cpp.obj
+.PHONY : Player/Player.obj
+
+# target to build an object file
+Player/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Player/Player.cpp.obj
+.PHONY : Player/Player.cpp.obj
+
+Player/Player.i: Player/Player.cpp.i
+.PHONY : Player/Player.i
+
+# target to preprocess a source file
+Player/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Player/Player.cpp.i
+.PHONY : Player/Player.cpp.i
+
+Player/Player.s: Player/Player.cpp.s
+.PHONY : Player/Player.s
+
+# target to generate assembly for a file
+Player/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Player/Player.cpp.s
+.PHONY : Player/Player.cpp.s
 
 Scene/LoseScene.obj: Scene/LoseScene.cpp.obj
 .PHONY : Scene/LoseScene.obj
 
 # target to build an object file
 Scene/LoseScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/LoseScene.cpp.obj
 .PHONY : Scene/LoseScene.cpp.obj
 
 Scene/LoseScene.i: Scene/LoseScene.cpp.i
@@ -645,7 +549,7 @@ Scene/LoseScene.i: Scene/LoseScene.cpp.i
 
 # target to preprocess a source file
 Scene/LoseScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/LoseScene.cpp.i
 .PHONY : Scene/LoseScene.cpp.i
 
 Scene/LoseScene.s: Scene/LoseScene.cpp.s
@@ -653,7 +557,7 @@ Scene/LoseScene.s: Scene/LoseScene.cpp.s
 
 # target to generate assembly for a file
 Scene/LoseScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/LoseScene.cpp.s
 .PHONY : Scene/LoseScene.cpp.s
 
 Scene/PlayScene.obj: Scene/PlayScene.cpp.obj
@@ -661,7 +565,7 @@ Scene/PlayScene.obj: Scene/PlayScene.cpp.obj
 
 # target to build an object file
 Scene/PlayScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/PlayScene.cpp.obj
 .PHONY : Scene/PlayScene.cpp.obj
 
 Scene/PlayScene.i: Scene/PlayScene.cpp.i
@@ -669,7 +573,7 @@ Scene/PlayScene.i: Scene/PlayScene.cpp.i
 
 # target to preprocess a source file
 Scene/PlayScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/PlayScene.cpp.i
 .PHONY : Scene/PlayScene.cpp.i
 
 Scene/PlayScene.s: Scene/PlayScene.cpp.s
@@ -677,7 +581,7 @@ Scene/PlayScene.s: Scene/PlayScene.cpp.s
 
 # target to generate assembly for a file
 Scene/PlayScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/PlayScene.cpp.s
 .PHONY : Scene/PlayScene.cpp.s
 
 Scene/ScoreboardScene.obj: Scene/ScoreboardScene.cpp.obj
@@ -685,7 +589,7 @@ Scene/ScoreboardScene.obj: Scene/ScoreboardScene.cpp.obj
 
 # target to build an object file
 Scene/ScoreboardScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/ScoreboardScene.cpp.obj
 .PHONY : Scene/ScoreboardScene.cpp.obj
 
 Scene/ScoreboardScene.i: Scene/ScoreboardScene.cpp.i
@@ -693,7 +597,7 @@ Scene/ScoreboardScene.i: Scene/ScoreboardScene.cpp.i
 
 # target to preprocess a source file
 Scene/ScoreboardScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/ScoreboardScene.cpp.i
 .PHONY : Scene/ScoreboardScene.cpp.i
 
 Scene/ScoreboardScene.s: Scene/ScoreboardScene.cpp.s
@@ -701,7 +605,7 @@ Scene/ScoreboardScene.s: Scene/ScoreboardScene.cpp.s
 
 # target to generate assembly for a file
 Scene/ScoreboardScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/ScoreboardScene.cpp.s
 .PHONY : Scene/ScoreboardScene.cpp.s
 
 Scene/SettingsScene.obj: Scene/SettingsScene.cpp.obj
@@ -709,7 +613,7 @@ Scene/SettingsScene.obj: Scene/SettingsScene.cpp.obj
 
 # target to build an object file
 Scene/SettingsScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/SettingsScene.cpp.obj
 .PHONY : Scene/SettingsScene.cpp.obj
 
 Scene/SettingsScene.i: Scene/SettingsScene.cpp.i
@@ -717,7 +621,7 @@ Scene/SettingsScene.i: Scene/SettingsScene.cpp.i
 
 # target to preprocess a source file
 Scene/SettingsScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/SettingsScene.cpp.i
 .PHONY : Scene/SettingsScene.cpp.i
 
 Scene/SettingsScene.s: Scene/SettingsScene.cpp.s
@@ -725,7 +629,7 @@ Scene/SettingsScene.s: Scene/SettingsScene.cpp.s
 
 # target to generate assembly for a file
 Scene/SettingsScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/SettingsScene.cpp.s
 .PHONY : Scene/SettingsScene.cpp.s
 
 Scene/StageSelectScene.obj: Scene/StageSelectScene.cpp.obj
@@ -733,7 +637,7 @@ Scene/StageSelectScene.obj: Scene/StageSelectScene.cpp.obj
 
 # target to build an object file
 Scene/StageSelectScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/StageSelectScene.cpp.obj
 .PHONY : Scene/StageSelectScene.cpp.obj
 
 Scene/StageSelectScene.i: Scene/StageSelectScene.cpp.i
@@ -741,7 +645,7 @@ Scene/StageSelectScene.i: Scene/StageSelectScene.cpp.i
 
 # target to preprocess a source file
 Scene/StageSelectScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/StageSelectScene.cpp.i
 .PHONY : Scene/StageSelectScene.cpp.i
 
 Scene/StageSelectScene.s: Scene/StageSelectScene.cpp.s
@@ -749,7 +653,7 @@ Scene/StageSelectScene.s: Scene/StageSelectScene.cpp.s
 
 # target to generate assembly for a file
 Scene/StageSelectScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/StageSelectScene.cpp.s
 .PHONY : Scene/StageSelectScene.cpp.s
 
 Scene/StartScene.obj: Scene/StartScene.cpp.obj
@@ -757,7 +661,7 @@ Scene/StartScene.obj: Scene/StartScene.cpp.obj
 
 # target to build an object file
 Scene/StartScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/StartScene.cpp.obj
 .PHONY : Scene/StartScene.cpp.obj
 
 Scene/StartScene.i: Scene/StartScene.cpp.i
@@ -765,7 +669,7 @@ Scene/StartScene.i: Scene/StartScene.cpp.i
 
 # target to preprocess a source file
 Scene/StartScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/StartScene.cpp.i
 .PHONY : Scene/StartScene.cpp.i
 
 Scene/StartScene.s: Scene/StartScene.cpp.s
@@ -773,7 +677,7 @@ Scene/StartScene.s: Scene/StartScene.cpp.s
 
 # target to generate assembly for a file
 Scene/StartScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/StartScene.cpp.s
 .PHONY : Scene/StartScene.cpp.s
 
 Scene/WinScene.obj: Scene/WinScene.cpp.obj
@@ -781,7 +685,7 @@ Scene/WinScene.obj: Scene/WinScene.cpp.obj
 
 # target to build an object file
 Scene/WinScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/WinScene.cpp.obj
 .PHONY : Scene/WinScene.cpp.obj
 
 Scene/WinScene.i: Scene/WinScene.cpp.i
@@ -789,7 +693,7 @@ Scene/WinScene.i: Scene/WinScene.cpp.i
 
 # target to preprocess a source file
 Scene/WinScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/WinScene.cpp.i
 .PHONY : Scene/WinScene.cpp.i
 
 Scene/WinScene.s: Scene/WinScene.cpp.s
@@ -797,63 +701,15 @@ Scene/WinScene.s: Scene/WinScene.cpp.s
 
 # target to generate assembly for a file
 Scene/WinScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/WinScene.cpp.s
 .PHONY : Scene/WinScene.cpp.s
-
-Turret/LaserTurret.obj: Turret/LaserTurret.cpp.obj
-.PHONY : Turret/LaserTurret.obj
-
-# target to build an object file
-Turret/LaserTurret.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/LaserTurret.cpp.obj
-.PHONY : Turret/LaserTurret.cpp.obj
-
-Turret/LaserTurret.i: Turret/LaserTurret.cpp.i
-.PHONY : Turret/LaserTurret.i
-
-# target to preprocess a source file
-Turret/LaserTurret.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/LaserTurret.cpp.i
-.PHONY : Turret/LaserTurret.cpp.i
-
-Turret/LaserTurret.s: Turret/LaserTurret.cpp.s
-.PHONY : Turret/LaserTurret.s
-
-# target to generate assembly for a file
-Turret/LaserTurret.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/LaserTurret.cpp.s
-.PHONY : Turret/LaserTurret.cpp.s
-
-Turret/MIssileTurret.obj: Turret/MIssileTurret.cpp.obj
-.PHONY : Turret/MIssileTurret.obj
-
-# target to build an object file
-Turret/MIssileTurret.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/MIssileTurret.cpp.obj
-.PHONY : Turret/MIssileTurret.cpp.obj
-
-Turret/MIssileTurret.i: Turret/MIssileTurret.cpp.i
-.PHONY : Turret/MIssileTurret.i
-
-# target to preprocess a source file
-Turret/MIssileTurret.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/MIssileTurret.cpp.i
-.PHONY : Turret/MIssileTurret.cpp.i
-
-Turret/MIssileTurret.s: Turret/MIssileTurret.cpp.s
-.PHONY : Turret/MIssileTurret.s
-
-# target to generate assembly for a file
-Turret/MIssileTurret.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/MIssileTurret.cpp.s
-.PHONY : Turret/MIssileTurret.cpp.s
 
 Turret/MachineGunTurret.obj: Turret/MachineGunTurret.cpp.obj
 .PHONY : Turret/MachineGunTurret.obj
 
 # target to build an object file
 Turret/MachineGunTurret.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/MachineGunTurret.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/MachineGunTurret.cpp.obj
 .PHONY : Turret/MachineGunTurret.cpp.obj
 
 Turret/MachineGunTurret.i: Turret/MachineGunTurret.cpp.i
@@ -861,7 +717,7 @@ Turret/MachineGunTurret.i: Turret/MachineGunTurret.cpp.i
 
 # target to preprocess a source file
 Turret/MachineGunTurret.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/MachineGunTurret.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/MachineGunTurret.cpp.i
 .PHONY : Turret/MachineGunTurret.cpp.i
 
 Turret/MachineGunTurret.s: Turret/MachineGunTurret.cpp.s
@@ -869,39 +725,15 @@ Turret/MachineGunTurret.s: Turret/MachineGunTurret.cpp.s
 
 # target to generate assembly for a file
 Turret/MachineGunTurret.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/MachineGunTurret.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/MachineGunTurret.cpp.s
 .PHONY : Turret/MachineGunTurret.cpp.s
-
-Turret/Shovel.obj: Turret/Shovel.cpp.obj
-.PHONY : Turret/Shovel.obj
-
-# target to build an object file
-Turret/Shovel.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/Shovel.cpp.obj
-.PHONY : Turret/Shovel.cpp.obj
-
-Turret/Shovel.i: Turret/Shovel.cpp.i
-.PHONY : Turret/Shovel.i
-
-# target to preprocess a source file
-Turret/Shovel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/Shovel.cpp.i
-.PHONY : Turret/Shovel.cpp.i
-
-Turret/Shovel.s: Turret/Shovel.cpp.s
-.PHONY : Turret/Shovel.s
-
-# target to generate assembly for a file
-Turret/Shovel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/Shovel.cpp.s
-.PHONY : Turret/Shovel.cpp.s
 
 Turret/Turret.obj: Turret/Turret.cpp.obj
 .PHONY : Turret/Turret.obj
 
 # target to build an object file
 Turret/Turret.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/Turret.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/Turret.cpp.obj
 .PHONY : Turret/Turret.cpp.obj
 
 Turret/Turret.i: Turret/Turret.cpp.i
@@ -909,7 +741,7 @@ Turret/Turret.i: Turret/Turret.cpp.i
 
 # target to preprocess a source file
 Turret/Turret.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/Turret.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/Turret.cpp.i
 .PHONY : Turret/Turret.cpp.i
 
 Turret/Turret.s: Turret/Turret.cpp.s
@@ -917,39 +749,15 @@ Turret/Turret.s: Turret/Turret.cpp.s
 
 # target to generate assembly for a file
 Turret/Turret.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/Turret.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/Turret.cpp.s
 .PHONY : Turret/Turret.cpp.s
-
-Turret/TurretButton.obj: Turret/TurretButton.cpp.obj
-.PHONY : Turret/TurretButton.obj
-
-# target to build an object file
-Turret/TurretButton.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/TurretButton.cpp.obj
-.PHONY : Turret/TurretButton.cpp.obj
-
-Turret/TurretButton.i: Turret/TurretButton.cpp.i
-.PHONY : Turret/TurretButton.i
-
-# target to preprocess a source file
-Turret/TurretButton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/TurretButton.cpp.i
-.PHONY : Turret/TurretButton.cpp.i
-
-Turret/TurretButton.s: Turret/TurretButton.cpp.s
-.PHONY : Turret/TurretButton.s
-
-# target to generate assembly for a file
-Turret/TurretButton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/TurretButton.cpp.s
-.PHONY : Turret/TurretButton.cpp.s
 
 UI/Animation/DirtyEffect.obj: UI/Animation/DirtyEffect.cpp.obj
 .PHONY : UI/Animation/DirtyEffect.obj
 
 # target to build an object file
 UI/Animation/DirtyEffect.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/DirtyEffect.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/DirtyEffect.cpp.obj
 .PHONY : UI/Animation/DirtyEffect.cpp.obj
 
 UI/Animation/DirtyEffect.i: UI/Animation/DirtyEffect.cpp.i
@@ -957,7 +765,7 @@ UI/Animation/DirtyEffect.i: UI/Animation/DirtyEffect.cpp.i
 
 # target to preprocess a source file
 UI/Animation/DirtyEffect.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/DirtyEffect.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/DirtyEffect.cpp.i
 .PHONY : UI/Animation/DirtyEffect.cpp.i
 
 UI/Animation/DirtyEffect.s: UI/Animation/DirtyEffect.cpp.s
@@ -965,7 +773,7 @@ UI/Animation/DirtyEffect.s: UI/Animation/DirtyEffect.cpp.s
 
 # target to generate assembly for a file
 UI/Animation/DirtyEffect.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/DirtyEffect.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/DirtyEffect.cpp.s
 .PHONY : UI/Animation/DirtyEffect.cpp.s
 
 UI/Animation/ExplosionEffect.obj: UI/Animation/ExplosionEffect.cpp.obj
@@ -973,7 +781,7 @@ UI/Animation/ExplosionEffect.obj: UI/Animation/ExplosionEffect.cpp.obj
 
 # target to build an object file
 UI/Animation/ExplosionEffect.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/ExplosionEffect.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/ExplosionEffect.cpp.obj
 .PHONY : UI/Animation/ExplosionEffect.cpp.obj
 
 UI/Animation/ExplosionEffect.i: UI/Animation/ExplosionEffect.cpp.i
@@ -981,7 +789,7 @@ UI/Animation/ExplosionEffect.i: UI/Animation/ExplosionEffect.cpp.i
 
 # target to preprocess a source file
 UI/Animation/ExplosionEffect.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/ExplosionEffect.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/ExplosionEffect.cpp.i
 .PHONY : UI/Animation/ExplosionEffect.cpp.i
 
 UI/Animation/ExplosionEffect.s: UI/Animation/ExplosionEffect.cpp.s
@@ -989,7 +797,7 @@ UI/Animation/ExplosionEffect.s: UI/Animation/ExplosionEffect.cpp.s
 
 # target to generate assembly for a file
 UI/Animation/ExplosionEffect.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/ExplosionEffect.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/ExplosionEffect.cpp.s
 .PHONY : UI/Animation/ExplosionEffect.cpp.s
 
 UI/Animation/Plane.obj: UI/Animation/Plane.cpp.obj
@@ -997,7 +805,7 @@ UI/Animation/Plane.obj: UI/Animation/Plane.cpp.obj
 
 # target to build an object file
 UI/Animation/Plane.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/Plane.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/Plane.cpp.obj
 .PHONY : UI/Animation/Plane.cpp.obj
 
 UI/Animation/Plane.i: UI/Animation/Plane.cpp.i
@@ -1005,7 +813,7 @@ UI/Animation/Plane.i: UI/Animation/Plane.cpp.i
 
 # target to preprocess a source file
 UI/Animation/Plane.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/Plane.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/Plane.cpp.i
 .PHONY : UI/Animation/Plane.cpp.i
 
 UI/Animation/Plane.s: UI/Animation/Plane.cpp.s
@@ -1013,7 +821,7 @@ UI/Animation/Plane.s: UI/Animation/Plane.cpp.s
 
 # target to generate assembly for a file
 UI/Animation/Plane.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/Plane.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/Plane.cpp.s
 .PHONY : UI/Animation/Plane.cpp.s
 
 UI/Component/Image.obj: UI/Component/Image.cpp.obj
@@ -1021,7 +829,7 @@ UI/Component/Image.obj: UI/Component/Image.cpp.obj
 
 # target to build an object file
 UI/Component/Image.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Image.cpp.obj
 .PHONY : UI/Component/Image.cpp.obj
 
 UI/Component/Image.i: UI/Component/Image.cpp.i
@@ -1029,7 +837,7 @@ UI/Component/Image.i: UI/Component/Image.cpp.i
 
 # target to preprocess a source file
 UI/Component/Image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Image.cpp.i
 .PHONY : UI/Component/Image.cpp.i
 
 UI/Component/Image.s: UI/Component/Image.cpp.s
@@ -1037,7 +845,7 @@ UI/Component/Image.s: UI/Component/Image.cpp.s
 
 # target to generate assembly for a file
 UI/Component/Image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Image.cpp.s
 .PHONY : UI/Component/Image.cpp.s
 
 UI/Component/ImageButton.obj: UI/Component/ImageButton.cpp.obj
@@ -1045,7 +853,7 @@ UI/Component/ImageButton.obj: UI/Component/ImageButton.cpp.obj
 
 # target to build an object file
 UI/Component/ImageButton.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/ImageButton.cpp.obj
 .PHONY : UI/Component/ImageButton.cpp.obj
 
 UI/Component/ImageButton.i: UI/Component/ImageButton.cpp.i
@@ -1053,7 +861,7 @@ UI/Component/ImageButton.i: UI/Component/ImageButton.cpp.i
 
 # target to preprocess a source file
 UI/Component/ImageButton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/ImageButton.cpp.i
 .PHONY : UI/Component/ImageButton.cpp.i
 
 UI/Component/ImageButton.s: UI/Component/ImageButton.cpp.s
@@ -1061,7 +869,7 @@ UI/Component/ImageButton.s: UI/Component/ImageButton.cpp.s
 
 # target to generate assembly for a file
 UI/Component/ImageButton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/ImageButton.cpp.s
 .PHONY : UI/Component/ImageButton.cpp.s
 
 UI/Component/Label.obj: UI/Component/Label.cpp.obj
@@ -1069,7 +877,7 @@ UI/Component/Label.obj: UI/Component/Label.cpp.obj
 
 # target to build an object file
 UI/Component/Label.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Label.cpp.obj
 .PHONY : UI/Component/Label.cpp.obj
 
 UI/Component/Label.i: UI/Component/Label.cpp.i
@@ -1077,7 +885,7 @@ UI/Component/Label.i: UI/Component/Label.cpp.i
 
 # target to preprocess a source file
 UI/Component/Label.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Label.cpp.i
 .PHONY : UI/Component/Label.cpp.i
 
 UI/Component/Label.s: UI/Component/Label.cpp.s
@@ -1085,7 +893,7 @@ UI/Component/Label.s: UI/Component/Label.cpp.s
 
 # target to generate assembly for a file
 UI/Component/Label.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Label.cpp.s
 .PHONY : UI/Component/Label.cpp.s
 
 UI/Component/Slider.obj: UI/Component/Slider.cpp.obj
@@ -1093,7 +901,7 @@ UI/Component/Slider.obj: UI/Component/Slider.cpp.obj
 
 # target to build an object file
 UI/Component/Slider.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Slider.cpp.obj
 .PHONY : UI/Component/Slider.cpp.obj
 
 UI/Component/Slider.i: UI/Component/Slider.cpp.i
@@ -1101,7 +909,7 @@ UI/Component/Slider.i: UI/Component/Slider.cpp.i
 
 # target to preprocess a source file
 UI/Component/Slider.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Slider.cpp.i
 .PHONY : UI/Component/Slider.cpp.i
 
 UI/Component/Slider.s: UI/Component/Slider.cpp.s
@@ -1109,7 +917,7 @@ UI/Component/Slider.s: UI/Component/Slider.cpp.s
 
 # target to generate assembly for a file
 UI/Component/Slider.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Slider.cpp.s
 .PHONY : UI/Component/Slider.cpp.s
 
 main.obj: main.cpp.obj
@@ -1117,7 +925,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -1125,7 +933,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -1133,7 +941,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -1144,34 +952,19 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... 2025_I2P2_TowerDefense
+	@echo ... 2025_I2P2_Final_Project
 	@echo ... Bullet/Bullet.obj
 	@echo ... Bullet/Bullet.i
 	@echo ... Bullet/Bullet.s
 	@echo ... Bullet/FireBullet.obj
 	@echo ... Bullet/FireBullet.i
 	@echo ... Bullet/FireBullet.s
-	@echo ... Bullet/LaserBullet.obj
-	@echo ... Bullet/LaserBullet.i
-	@echo ... Bullet/LaserBullet.s
-	@echo ... Bullet/Missile.obj
-	@echo ... Bullet/Missile.i
-	@echo ... Bullet/Missile.s
 	@echo ... Enemy/Enemy.obj
 	@echo ... Enemy/Enemy.i
 	@echo ... Enemy/Enemy.s
-	@echo ... Enemy/MechEnemy.obj
-	@echo ... Enemy/MechEnemy.i
-	@echo ... Enemy/MechEnemy.s
-	@echo ... Enemy/PlaneEnemy.obj
-	@echo ... Enemy/PlaneEnemy.i
-	@echo ... Enemy/PlaneEnemy.s
 	@echo ... Enemy/SoldierEnemy.obj
 	@echo ... Enemy/SoldierEnemy.i
 	@echo ... Enemy/SoldierEnemy.s
-	@echo ... Enemy/TankEnemy.obj
-	@echo ... Enemy/TankEnemy.i
-	@echo ... Enemy/TankEnemy.s
 	@echo ... Engine/Allegro5Exception.obj
 	@echo ... Engine/Allegro5Exception.i
 	@echo ... Engine/Allegro5Exception.s
@@ -1208,6 +1001,9 @@ help:
 	@echo ... Engine/Sprite.obj
 	@echo ... Engine/Sprite.i
 	@echo ... Engine/Sprite.s
+	@echo ... Player/Player.obj
+	@echo ... Player/Player.i
+	@echo ... Player/Player.s
 	@echo ... Scene/LoseScene.obj
 	@echo ... Scene/LoseScene.i
 	@echo ... Scene/LoseScene.s
@@ -1229,24 +1025,12 @@ help:
 	@echo ... Scene/WinScene.obj
 	@echo ... Scene/WinScene.i
 	@echo ... Scene/WinScene.s
-	@echo ... Turret/LaserTurret.obj
-	@echo ... Turret/LaserTurret.i
-	@echo ... Turret/LaserTurret.s
-	@echo ... Turret/MIssileTurret.obj
-	@echo ... Turret/MIssileTurret.i
-	@echo ... Turret/MIssileTurret.s
 	@echo ... Turret/MachineGunTurret.obj
 	@echo ... Turret/MachineGunTurret.i
 	@echo ... Turret/MachineGunTurret.s
-	@echo ... Turret/Shovel.obj
-	@echo ... Turret/Shovel.i
-	@echo ... Turret/Shovel.s
 	@echo ... Turret/Turret.obj
 	@echo ... Turret/Turret.i
 	@echo ... Turret/Turret.s
-	@echo ... Turret/TurretButton.obj
-	@echo ... Turret/TurretButton.i
-	@echo ... Turret/TurretButton.s
 	@echo ... UI/Animation/DirtyEffect.obj
 	@echo ... UI/Animation/DirtyEffect.i
 	@echo ... UI/Animation/DirtyEffect.s

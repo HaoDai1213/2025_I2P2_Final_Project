@@ -2,7 +2,7 @@
 #define FIREBULLET_HPP
 #include "Bullet.hpp"
 
-class Enemy;
+class Player;
 class Turret;
 namespace Engine {
     struct Point;
@@ -10,7 +10,7 @@ namespace Engine {
 
 class FireBullet : public Bullet {
 public:
-    explicit FireBullet(Engine::Point position, Engine::Point forwardDirection, float rotation, Turret *parent);
-    void OnExplode(Enemy *enemy) override;
+    explicit FireBullet(Engine::Point position, Engine::Point forwardDirection, float rotation);
+    void OnExplode(Player *player) override;
 };
 #endif   // FIREBULLET_HPP

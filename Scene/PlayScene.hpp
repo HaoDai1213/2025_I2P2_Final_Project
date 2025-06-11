@@ -5,11 +5,15 @@
 #include <memory>
 #include <utility>
 #include <vector>
+#include <map>
+#include <tuple>
 
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
 
 class Turret;
+class Player;
+class Bullet;
 namespace Engine {
     class Group;
     class Image;
@@ -19,11 +23,6 @@ namespace Engine {
 
 class PlayScene final : public Engine::IScene {
 private:
-    enum TileType {
-        TILE_DIRT,
-        TILE_FLOOR,
-        TILE_OCCUPIED,
-    };
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
@@ -40,14 +39,13 @@ public:
     static const float DangerTime;
     static const Engine::Point SpawnGridPoint;
     static const Engine::Point EndGridPoint;
-    static const std::vector<int> code;
     int MapId;
     float ticks;
     float deathCountDown;
-    bool cheat;
     int count;
     static int gamescore;
     bool shovelToggle;
+    int playerSpeed;
     // Map tiles.
     Group *TileMapGroup;
     Group *GroundEffectGroup;
@@ -61,12 +59,9 @@ public:
     Engine::Label *UILives;
     Engine::Image *imgTarget;
     Engine::Sprite *dangerIndicator;
-    Turret *preview;
-    Turret *tbdTurret;
-    std::vector<std::vector<TileType>> mapState;
-    std::vector<std::vector<int>> mapDistance;
-    std::list<std::pair<int, float>> enemyWaveData;
-    std::list<int> keyStrokes;
+    Player *player;     // important
+    std::list<std::tuple<int, int, int>> bulletData;
+    std::map<int, int> keyState;
     static Engine::Point GetClientSize();
     explicit PlayScene() = default;
     void Initialize() override;
@@ -77,15 +72,11 @@ public:
     void OnMouseMove(int mx, int my) override;
     void OnMouseUp(int button, int mx, int my) override;
     void OnKeyDown(int keyCode) override;
+    void OnKeyUp(int keyCode) override;
     void Hit();
-    int GetMoney() const;
-    void EarnMoney(int money);
-    void ReadMap();
-    void ReadEnemyWave();
+    void ReadBullet();
+    void ReadNote();
     void ConstructUI();
-    void UIBtnClicked(int id);
-    bool CheckSpaceValid(int x, int y);
-    std::vector<std::vector<int>> CalculateBFSDistance();
     // void ModifyReadMapTiles();
 };
 

@@ -4,7 +4,7 @@
 
 #include "Engine/Sprite.hpp"
 
-class Enemy;
+class Player;
 class PlayScene;
 class Turret;
 namespace Engine {
@@ -17,11 +17,11 @@ protected:
     float damage;
     Turret *parent;
     PlayScene *getPlayScene();
-    virtual void OnExplode(Enemy *enemy);
+    virtual void OnExplode(Player *player);
 
 public:
-    Enemy *Target = nullptr;
-    explicit Bullet(std::string img, float speed, float damage, Engine::Point position, Engine::Point forwardDirection, float rotation, Turret *parent);
+    Player *Target;
+    explicit Bullet(std::string img, float speed, float damage, Engine::Point position, Engine::Point forwardDirection, float rotation);
     void Update(float deltaTime) override;
 };
 #endif   // BULLET_HPP
