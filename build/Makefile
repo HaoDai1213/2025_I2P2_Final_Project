@@ -800,30 +800,6 @@ UI/Animation/ExplosionEffect.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/ExplosionEffect.cpp.s
 .PHONY : UI/Animation/ExplosionEffect.cpp.s
 
-UI/Animation/Plane.obj: UI/Animation/Plane.cpp.obj
-.PHONY : UI/Animation/Plane.obj
-
-# target to build an object file
-UI/Animation/Plane.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/Plane.cpp.obj
-.PHONY : UI/Animation/Plane.cpp.obj
-
-UI/Animation/Plane.i: UI/Animation/Plane.cpp.i
-.PHONY : UI/Animation/Plane.i
-
-# target to preprocess a source file
-UI/Animation/Plane.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/Plane.cpp.i
-.PHONY : UI/Animation/Plane.cpp.i
-
-UI/Animation/Plane.s: UI/Animation/Plane.cpp.s
-.PHONY : UI/Animation/Plane.s
-
-# target to generate assembly for a file
-UI/Animation/Plane.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/Plane.cpp.s
-.PHONY : UI/Animation/Plane.cpp.s
-
 UI/Component/Image.obj: UI/Component/Image.cpp.obj
 .PHONY : UI/Component/Image.obj
 
@@ -1037,9 +1013,6 @@ help:
 	@echo ... UI/Animation/ExplosionEffect.obj
 	@echo ... UI/Animation/ExplosionEffect.i
 	@echo ... UI/Animation/ExplosionEffect.s
-	@echo ... UI/Animation/Plane.obj
-	@echo ... UI/Animation/Plane.i
-	@echo ... UI/Animation/Plane.s
 	@echo ... UI/Component/Image.obj
 	@echo ... UI/Component/Image.i
 	@echo ... UI/Component/Image.s

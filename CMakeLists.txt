@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.27)
 project(2025_I2P2_Final_Project)
 
 set(CMAKE_CXX_STANDARD 17)
+set(ALLEGRO_VSYNC 2) # Turn off vsync
 
 include_directories(.)
 include_directories(Resource)
@@ -75,8 +76,6 @@ add_executable(2025_I2P2_Final_Project
     UI/Animation/DirtyEffect.hpp
     UI/Animation/ExplosionEffect.cpp
     UI/Animation/ExplosionEffect.hpp
-    UI/Animation/Plane.cpp
-    UI/Animation/Plane.hpp
     
     UI/Component/Image.cpp
     UI/Component/Image.hpp

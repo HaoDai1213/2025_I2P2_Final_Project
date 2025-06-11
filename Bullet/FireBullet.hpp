@@ -10,7 +10,7 @@ namespace Engine {
 
 class FireBullet : public Bullet {
 public:
-    explicit FireBullet(Engine::Point position, Engine::Point forwardDirection, float rotation);
+    explicit FireBullet(Engine::Point position, Engine::Point forwardDirection, float rotation, float speed);
     void OnExplode(Player *player) override;
 };
 #endif   // FIREBULLET_HPP

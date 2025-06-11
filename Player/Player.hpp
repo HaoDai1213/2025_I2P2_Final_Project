@@ -19,11 +19,13 @@ protected:
     bool isHit;
 
 public:
+    bool alive;
     Player(std::string img, float x, float y);
     void Hit(float damage);
     void Update(float deltaTime) override;
     void Draw() const override;
     int getSpeed();
+    int getHp();
 };
 
 

@@ -20,18 +20,20 @@ PlayScene *Player::getPlayScene() {
 }
 
 Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
-    speed = 5;
+    speed = 8;
     hp = 100;
     CollisionRadius = 20;
     isHit = false;
+    alive = true;
 }
 
 void Player::Hit(float damage) {
-    Engine::LOG(Engine::INFO) << "Player is hit: " << hp << " hp left";
     hp -= damage;
+    Engine::LOG(Engine::INFO) << "Player is hit: " << hp << " hp left";
+    AudioHelper::PlayAudio("playerhit.wav");
     isHit = true;   // set it in update
     if (hp <= 0) {
-
+        alive = false;
     }
 }
 
@@ -55,4 +57,8 @@ void Player::Draw() const {
 
 int Player::getSpeed() {
     return speed;
+}
+
+int Player::getHp() {
+    return hp;
 }

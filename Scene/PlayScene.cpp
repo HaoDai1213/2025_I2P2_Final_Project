@@ -12,8 +12,6 @@
 
 #include "Bullet/Bullet.hpp"
 #include "Bullet/FireBullet.hpp"
-#include "Enemy/Enemy.hpp"
-#include "Enemy/SoldierEnemy.hpp"
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
 #include "Engine/Group.hpp"
@@ -21,9 +19,7 @@
 #include "Engine/Resources.hpp"
 #include "Player/Player.hpp"
 #include "PlayScene.hpp"
-#include "Turret/MachineGunTurret.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/Plane.hpp"
 #include "UI/Component/Label.hpp"
 
 bool PlayScene::DebugMode = false;
@@ -44,7 +40,7 @@ void PlayScene::Initialize() {
     keyState.clear();
     ticks = 0;
     deathCountDown = -1;
-    lives = 10;
+    lives = 0;
     money = 150;
     SpeedMult = 1;
     count = 0;
@@ -58,11 +54,7 @@ void PlayScene::Initialize() {
     AddNewObject(EffectGroup = new Group());
     // Should support buttons.
     AddNewControlObject(UIGroup = new Group());
-    // ReadMap();
-    // ReadEnemyWave();
     ReadBullet();
-    // mapDistance = CalculateBFSDistance();
-    ConstructUI();
     imgTarget = new Engine::Image("play/target.png", 0, 0);
     imgTarget->Visible = false;
     UIGroup->AddNewObject(imgTarget);
@@ -70,12 +62,14 @@ void PlayScene::Initialize() {
     // Things related to player 
     player = new Player("play/player.png", SpawnGridPoint.x * BlockSize, SpawnGridPoint.y * BlockSize);
     playerSpeed = player->getSpeed();
+    lives = player->getHp();
 
+    ConstructUI();
     // Preload Lose Scene
     deathBGMInstance = Engine::Resources::GetInstance().GetSampleInstance("astronomia.ogg");
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     // Start BGM.
-    bgmId = AudioHelper::PlayBGM("play.ogg");
+    bgmId = AudioHelper::PlayBGM("song" + std::to_string(MapId) + ".mp3");
 }
 void PlayScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
@@ -114,11 +108,10 @@ void PlayScene::Update(float deltaTime) {
         int cur_t = std::get<0> (current);
         rep = 0;
         if (ticks * 1000 >= cur_t) {    // ticks counts in S and bullet.txt in MS
-            if (!bulletData.empty()) Engine::LOG(Engine::INFO) << "now tick: " << cur_t;
             for (auto &b : bulletData) {    // only when the first bullet matches the timing then we do the search
                 auto [t, p, s] = b;
                 if (t <= ticks * 1000) {
-                    BulletGroup->AddNewObject(new FireBullet(Engine::Point(24 * BlockSize, p), Engine::Point(-1, 0), 0.0));
+                    BulletGroup->AddNewObject(new FireBullet(Engine::Point(24 * BlockSize, p), Engine::Point(-1, 0), 0.0, s));
                     rep++;
                 }
             }
@@ -127,6 +120,10 @@ void PlayScene::Update(float deltaTime) {
                 bulletData.pop_front();
             }
         }
+        lives = player->getHp();
+        UILives->Text = std::string("Life ") + std::to_string(lives);
+        if (player->alive == false)
+            Engine::GameEngine::GetInstance().ChangeScene("lose");
     }
 
     // player
@@ -224,7 +221,7 @@ void PlayScene::Hit() {
 
 void PlayScene::ReadBullet() {
     std::string filename = std::string("Resource/bullet") + std::to_string(MapId) + ".txt";
-    int timing, pos, speed;
+    float timing, pos, speed;
     bulletData.clear();
     std::ifstream fin(filename);
     while (fin >> timing >> pos >> speed) {
@@ -237,8 +234,7 @@ void PlayScene::ReadBullet() {
 void PlayScene::ConstructUI() {
     // Text
     UIGroup->AddNewObject(new Engine::Label(std::string("Stage ") + std::to_string(MapId), "pirulen.ttf", 32, 1294, 0));
-    UIGroup->AddNewObject(UIMoney = new Engine::Label(std::string("$") + std::to_string(money), "pirulen.ttf", 24, 1294, 48));
-    UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 1294, 88));
+    UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 1294, 88, 255, 255, 255));
 
 }
 

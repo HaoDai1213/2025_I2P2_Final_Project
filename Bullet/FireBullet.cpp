@@ -12,7 +12,7 @@
 
 class Turret;
 
-FireBullet::FireBullet(Engine::Point position, Engine::Point forwardDirection, float rotation) : Bullet("play/bullet-1.png", 500, 10, position, forwardDirection, rotation - ALLEGRO_PI / 2) {
+FireBullet::FireBullet(Engine::Point position, Engine::Point forwardDirection, float rotation, float speed) : Bullet("play/bullet-7.png", speed, 10, position, forwardDirection, rotation - ALLEGRO_PI / 2) {
 }
 void FireBullet::OnExplode(Player *player) {
     std::random_device dev;
