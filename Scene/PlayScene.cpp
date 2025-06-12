@@ -23,6 +23,9 @@
 #include "Player/Player.hpp"
 #include "PlayScene.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
+#include "UI/Animation/MissEffect.hpp"
+#include "UI/Animation/GreatEffect.hpp"
+#include "UI/Animation/PerfectEffect.hpp"
 #include "UI/Component/Label.hpp"
 
 bool PlayScene::DebugMode = false;
@@ -285,22 +288,30 @@ void PlayScene::HitObject(int curTiming, int type) {
         if (minDiff <= Note::judgement_ms) {
             if (type == FirstNote->getType()) {
                 if (minDiff <= Note::judgement_pf) {
+                    EffectGroup->AddNewObject(new PerfectEffect(100, 200 + 75));
+                    EffectGroup->AddNewObject(new PerfectEffect(100, 650 + 75));
                     Engine::LOG(Engine::INFO) << "perfect! " << curTiming << ", " << FirstNote->getHitTiming();
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                     gamescore += 1000;
                 }
                 else if (minDiff <= Note::judgement_gr) {
+                    EffectGroup->AddNewObject(new GreatEffect(100, 200 + 75));
+                    EffectGroup->AddNewObject(new GreatEffect(100, 650 + 75));
                     Engine::LOG(Engine::INFO) << "great! " << curTiming << ", " << FirstNote->getHitTiming();
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                     gamescore += 500;
                 }
                 else {
+                    EffectGroup->AddNewObject(new MissEffect(100, 200 + 75));
+                    EffectGroup->AddNewObject(new MissEffect(100, 650 + 75));
                     Engine::LOG(Engine::INFO) << "miss (late)! " << curTiming << ", " << FirstNote->getHitTiming();
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                     AudioHelper::PlayAudio("miss.mp3");
                 }
             }
             else {
+                EffectGroup->AddNewObject(new MissEffect(100, 200 + 75));
+                EffectGroup->AddNewObject(new MissEffect(100, 650 + 75));
                 Engine::LOG(Engine::INFO) << "miss! " << curTiming << ", " << FirstNote->getHitTiming();
                 NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                 AudioHelper::PlayAudio("miss.mp3");

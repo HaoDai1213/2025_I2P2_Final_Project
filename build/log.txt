@@ -26,22 +26,29 @@
 [INFO] Changed to play scene
 [INFO] Loaded Resource<image>: Resource/images/play/bullet-7.png
 [INFO] Loaded Resource<image>: Resource/images/play/note2.png scaled to 110x110
-[INFO] Loaded Resource<audio>: Resource/audios/note1.wav
-[INFO] Loaded Resource<image>: Resource/images/play/note1.png scaled to 110x110
 [INFO] Loaded Resource<audio>: Resource/audios/note2.wav
-[INFO] perfect! 2115, 2105
-[INFO] perfect! 2648, 2631
-[INFO] perfect! 3148, 3157
-[INFO] perfect! 3698, 3683
-[INFO] perfect! 4215, 4210
+[INFO] Loaded Resource<image>: Resource/images/play/note1.png scaled to 110x110
+[INFO] Loaded Resource<image>: Resource/images/play/miss.png scaled to 120x120
+[INFO] miss (late)! 1981, 2105
+[INFO] Loaded Resource<audio>: Resource/audios/miss.mp3
+[INFO] Loaded Resource<image>: Resource/images/play/great.png
+[INFO] great! 2564, 2631
+[INFO] miss! 
+[INFO] Loaded Resource<image>: Resource/images/play/perfect.png
+[INFO] perfect! 3665, 3683
+[INFO] Loaded Resource<audio>: Resource/audios/note1.wav
+[INFO] perfect! 4181, 4210
 [INFO] Game Terminating...
 [INFO] stopped audio (bgm)
 [INFO] Game terminated
 [INFO] Game end
+[INFO] Destroyed Resource<image>: play/perfect.png
+[INFO] Destroyed Resource<image>: play/great.png
 [INFO] Destroyed Resource<image>: play/bullet-7.png
 [INFO] Destroyed Resource<image>: lose/benjamin-happy.png
 [INFO] Destroyed Resource<image>: Play/bar.png?1600x150
 [INFO] Destroyed Resource<image>: stage-select/floor.png
+[INFO] Destroyed Resource<image>: play/miss.png?120x120
 [INFO] Destroyed Resource<image>: play/note1.png?110x110
 [INFO] Destroyed Resource<image>: Play/judge_area.png?120x120
 [INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
@@ -55,6 +62,7 @@
 [INFO] Destroyed Resource<font>: pirulen.ttf?120
 [INFO] Destroyed<sample_instance>: select.ogg
 [INFO] Destroyed Resource<audio>: note1.wav
+[INFO] Destroyed Resource<audio>: miss.mp3
 [INFO] Destroyed Resource<audio>: song1.mp3
 [INFO] Destroyed Resource<audio>: note2.wav
 [INFO] Destroyed Resource<audio>: select.ogg
