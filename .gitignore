@@ -15,3 +15,5 @@ Resource
 # Others
 log.txt
 scoreboard.txt
+build/log.txt
+/build

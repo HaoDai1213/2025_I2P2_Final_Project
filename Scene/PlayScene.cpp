@@ -17,6 +17,9 @@
 #include "Engine/Group.hpp"
 #include "Engine/LOG.hpp"
 #include "Engine/Resources.hpp"
+#include "Note/Note.hpp"
+#include "Note/RedNote.hpp"
+#include "Note/BlueNote.hpp"
 #include "Player/Player.hpp"
 #include "PlayScene.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
@@ -27,7 +30,9 @@ const std::vector<Engine::Point> PlayScene::directions = { Engine::Point(-1, 0),
 const int PlayScene::MapWidth = 25, PlayScene::MapHeight = 13;
 const int PlayScene::BlockSize = 64;
 const Engine::Point PlayScene::SpawnGridPoint = Engine::Point(3, 7);
-std::map<char, bool> keyState = {{'W', false}, {'A', false}, {'S', false}, {'D', false}, {'R', false}, {'B', false}};
+const int sliderSize = 1500;
+const int noteSize = 220;
+std::map<char, bool> keyState = {{'W', false}, {'A', false}, {'S', false}, {'D', false}};
 
 Engine::Point PlayScene::GetClientSize() {
     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
@@ -40,20 +45,17 @@ void PlayScene::Initialize() {
     keyState.clear();
     ticks = 0;
     lives = 0;
-    money = 150;
     SpeedMult = 1;
     // Add groups from bottom to top.
     AddNewObject(GroundEffectGroup = new Group());
     AddNewObject(DebugIndicatorGroup = new Group());
     AddNewObject(BulletGroup = new Group());
     AddNewObject(EffectGroup = new Group());
-    AddNewObject(NoteGroup = new Group());
-    // Should support buttons.
     AddNewControlObject(UIGroup = new Group());
+    AddNewObject(NoteGroup = new Group());
+
     ReadBullet();
-    imgTarget = new Engine::Image("play/target.png", 0, 0);
-    imgTarget->Visible = false;
-    UIGroup->AddNewObject(imgTarget);
+    ReadNote();
 
     // Things related to player 
     player = new Player("play/player.png", SpawnGridPoint.x * BlockSize, SpawnGridPoint.y * BlockSize);
@@ -83,30 +85,16 @@ void PlayScene::Update(float deltaTime) {
         IScene::Update(deltaTime);
         // Check if we should create new enemy.
         ticks += deltaTime;
-        // auto current = enemyWaveData.front();
-        // if (ticks < current.second)
-        //     continue;
-        // ticks -= current.second;
-        // enemyWaveData.pop_front();
-        // const Engine::Point SpawnCoordinate = Engine::Point(SpawnGridPoint.x * BlockSize + BlockSize / 2, SpawnGridPoint.y * BlockSize + BlockSize / 2);
-        // Enemy *enemy;
-        // switch (current.first) {
-        //     case 1:
-        //         EnemyGroup->AddNewObject(enemy = new SoldierEnemy(SpawnCoordinate.x, SpawnCoordinate.y));
-        //         break;
-        //     default:
-        //         continue;
-        // }
-        // // Compensate the time lost.
-        // enemy->Update(ticks);
-        auto current = bulletData.front();
-        int cur_t = std::get<0> (current);
+
+        // bullet
+        auto cur_bullet = bulletData.front();
+        int cur_bt = std::get<0> (cur_bullet);
         rep = 0;
-        if (ticks * 1000 >= cur_t) {    // ticks counts in S and bullet.txt in MS
+        if (ticks * 1000 >= cur_bt) {    // ticks counts in second and bullet.txt in millisecond so *1000 here
             for (auto &b : bulletData) {    // only when the first bullet matches the timing then we do the search
-                auto [t, p, s] = b;
-                if (t <= ticks * 1000) {
-                    BulletGroup->AddNewObject(new FireBullet(Engine::Point(24 * BlockSize, p), Engine::Point(-1, 0), 0.0, s));
+                auto [bTiming, bPos, bSpeed] = b;
+                if (bTiming <= ticks * 1000) {
+                    BulletGroup->AddNewObject(new FireBullet(Engine::Point(24 * BlockSize, bPos), Engine::Point(-1, 0), 0.0, bSpeed));
                     rep++;
                 }
             }
@@ -119,10 +107,30 @@ void PlayScene::Update(float deltaTime) {
         UILives->Text = std::string("Life ") + std::to_string(lives);
         if (player->alive == false)
             Engine::GameEngine::GetInstance().ChangeScene("lose");
+
+        // note
+        if (!noteData.empty()) {
+            auto cur_note = noteData.front();
+            auto [nTiming, nLine, nType, nMult] = cur_note;
+            int cur_nt = nTiming - duration * 1000 / nMult;
+            if (ticks * 1000 >= cur_nt) {
+                noteData.pop_front();
+                switch (nType) {
+                    case 1:
+                        NoteGroup->AddNewObject(new RedNote(cur_nt, nLine, (sliderSize - noteSize) / duration * nMult, nMult, Engine::Point(24 * BlockSize, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
+                        Engine::LOG(Engine::INFO) << "now ticks: " << ticks * 1000;
+                        break;
+                    case 2:
+                        NoteGroup->AddNewObject(new BlueNote(cur_nt, nLine, (sliderSize - noteSize) / duration * nMult, nMult, Engine::Point(24 * BlockSize, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
+                        break;
+                    default:
+                        continue;
+                }
+            }
+        }
     }
 
     // player
-    // the boundary would be changed after the slider of rg part is done
     if (keyState['W'] && player->Position.y - playerSpeed >= 350 + 20) {
         player->Position.y -= playerSpeed;
     }
@@ -150,14 +158,9 @@ void PlayScene::OnMouseMove(int mx, int my) {
     IScene::OnMouseMove(mx, my);
     const int x = mx / BlockSize;
     const int y = my / BlockSize;
-    imgTarget->Visible = true;
-    imgTarget->Position.x = x * BlockSize;
-    imgTarget->Position.y = y * BlockSize;
 }
 void PlayScene::OnMouseUp(int button, int mx, int my) {
     IScene::OnMouseUp(button, mx, my);
-    if (!imgTarget->Visible)
-        return;
     const int x = mx / BlockSize;
     const int y = my / BlockSize;
     if (button & 1) {
@@ -206,14 +209,6 @@ void PlayScene::OnKeyUp(int keyCode) {
     }
 }
 
-void PlayScene::Hit() {
-    lives--;
-    UILives->Text = std::string("Life ") + std::to_string(lives);
-    if (lives <= 0) {
-        Engine::GameEngine::GetInstance().ChangeScene("lose");
-    }
-}
-
 void PlayScene::ReadBullet() {
     std::string filename = std::string("Resource/bullet") + std::to_string(MapId) + ".txt";
     float timing, pos, speed;
@@ -221,9 +216,22 @@ void PlayScene::ReadBullet() {
     std::ifstream fin(filename);
     while (fin >> timing >> pos >> speed) {
         bulletData.push_back({timing, pos, speed});
-        Engine::LOG(Engine::INFO) << "Bullet loaded now: " << timing << ", " << pos << ", " << speed;
+        // Engine::LOG(Engine::INFO) << "Bullet loaded now: " << timing << ", " << pos << ", " << speed;
     }
     fin.close();
+}
+
+void PlayScene::ReadNote() {
+    std::string filename = std::string("Resource/note") + std::to_string(MapId) + ".txt";
+    float timing, line, type, mult;
+    noteData.clear();
+    std::ifstream fin(filename);
+    fin >> MapBPM;
+    duration = MapBPM / 60;
+    while (fin >> timing >> line >> type >> mult) {
+        noteData.push_back({timing, line, type, mult});
+        Engine::LOG(Engine::INFO) << "Note loaded now: " << timing << ", " << type << ", " << mult;
+    }
 }
 
 void PlayScene::ConstructUI() {

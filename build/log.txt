@@ -16,19 +16,11 @@
 [INFO] Created<sample_instance>: Resource/audios/select.ogg
 [INFO] Changed to stage-select scene
 [INFO] stopped audio (sample)
-[INFO] Bullet loaded now: 0, 300, 100
-[INFO] Bullet loaded now: 0, 400, 100
-[INFO] Bullet loaded now: 100, 350, 100
-[INFO] Bullet loaded now: 100, 450, 100
-[INFO] Bullet loaded now: 200, 400, 100
-[INFO] Bullet loaded now: 200, 500, 100
-[INFO] Bullet loaded now: 300, 450, 100
-[INFO] Bullet loaded now: 300, 550, 100
-[INFO] Bullet loaded now: 400, 500, 100
-[INFO] Bullet loaded now: 400, 600, 100
-[INFO] Bullet loaded now: 500, 550, 100
-[INFO] Bullet loaded now: 500, 650, 100
-[INFO] Loaded Resource<image>: Resource/images/play/target.png
+[INFO] Note loaded now: 2105, 2, 1
+[INFO] Note loaded now: 2631, 2, 1
+[INFO] Note loaded now: 3157, 1, 1
+[INFO] Note loaded now: 3683, 1, 1
+[INFO] Note loaded now: 4210, 2, 1
 [INFO] Loaded Resource<image>: Resource/images/play/player.png
 [INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 32
 [INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 24
@@ -40,65 +32,111 @@
 [INFO] Loaded Resource<audio>: Resource/audios/song1.mp3
 [INFO] Changed to play scene
 [INFO] Loaded Resource<image>: Resource/images/play/bullet-7.png
+[INFO] Loaded Resource<image>: Resource/images/play/note2.png
+[INFO] 6 is down
+[INFO] 10 is down
 [INFO] 4 is down
-[INFO] 23 is down
-[INFO] 23 is up
+[INFO] 11 is down
+[INFO] 6 is up
+[INFO] 10 is up
+[INFO] 11 is up
 [INFO] 4 is up
-[INFO] 1 is down
-[INFO] 1 is up
-[INFO] 19 is down
-[INFO] 19 is up
+[INFO] Loaded Resource<image>: Resource/images/play/note1.png
+[INFO] now ticks: 1257.32
+[INFO] 8 is down
+[INFO] 6 is down
+[INFO] 7 is down
+[INFO] 10 is down
+[INFO] 8 is up
+[INFO] 7 is up
+[INFO] now ticks: 1790.45
+[INFO] 10 is up
+[INFO] 6 is up
+[INFO] 68 is down
+[INFO] 12 is down
+[INFO] 12 is up
+[INFO] 68 is up
+[INFO] 12 is down
+[INFO] 11 is down
+[INFO] 12 is up
+[INFO] 15 is down
+[INFO] 11 is up
+[INFO] 68 is down
+[INFO] 15 is up
+[INFO] 68 is up
+[INFO] 15 is down
+[INFO] 68 is down
+[INFO] 15 is up
+[INFO] 68 is up
+[INFO] 12 is down
+[INFO] 12 is up
+[INFO] 11 is down
+[INFO] 11 is up
+[INFO] 12 is down
+[INFO] 12 is up
+[INFO] 11 is down
+[INFO] 11 is up
+[INFO] 15 is down
+[INFO] 15 is up
+[INFO] 11 is down
+[INFO] 11 is up
+[INFO] 12 is down
+[INFO] 12 is up
+[INFO] 11 is down
 [INFO] Loaded Resource<image>: Resource/images/play/dirty-1.png
 [INFO] Player is hit: 90 hp left
 [INFO] Loaded Resource<audio>: Resource/audios/playerhit.wav
-[INFO] 23 is down
-[INFO] 23 is up
 [INFO] Player is hit: 80 hp left
-[INFO] Player is hit: 70 hp left
-[INFO] 1 is down
-[INFO] 1 is up
-[INFO] 19 is down
-[INFO] Player is hit: 60 hp left
-[INFO] 19 is up
-[INFO] 1 is down
-[INFO] 1 is up
-[INFO] 19 is down
-[INFO] 19 is up
-[INFO] 1 is down
-[INFO] 19 is down
-[INFO] 1 is up
-[INFO] 4 is down
-[INFO] 19 is up
-[INFO] 1 is down
-[INFO] 4 is up
-[INFO] 4 is down
-[INFO] 1 is up
-[INFO] 1 is down
-[INFO] 4 is up
-[INFO] 4 is down
-[INFO] 1 is up
-[INFO] 1 is down
-[INFO] 4 is up
-[INFO] 4 is down
-[INFO] 1 is up
-[INFO] 1 is down
-[INFO] 1 is up
-[INFO] 4 is up
-[INFO] 219 is down
+[INFO] 11 is up
+[INFO] 68 is down
+[INFO] 68 is up
+[INFO] 11 is down
+[INFO] 11 is up
+[INFO] 12 is down
+[INFO] 12 is up
+[INFO] 11 is down
+[INFO] 12 is down
+[INFO] 11 is up
+[INFO] 12 is up
+[INFO] 15 is down
+[INFO] 15 is up
+[INFO] 15 is down
+[INFO] 15 is up
+[INFO] 12 is down
+[INFO] 12 is up
+[INFO] 15 is down
+[INFO] 68 is down
+[INFO] 15 is up
+[INFO] 11 is down
+[INFO] 68 is up
+[INFO] 15 is down
+[INFO] 68 is down
+[INFO] 11 is up
+[INFO] 15 is up
+[INFO] 12 is down
+[INFO] 68 is up
+[INFO] 11 is down
+[INFO] 12 is up
+[INFO] 15 is down
+[INFO] 11 is up
+[INFO] 15 is up
+[INFO] 68 is down
+[INFO] 68 is up
 [INFO] Game Terminating...
 [INFO] stopped audio (bgm)
 [INFO] Game terminated
 [INFO] Game end
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<image>: play/note2.png
 [INFO] Destroyed Resource<image>: play/bullet-7.png
+[INFO] Destroyed Resource<image>: play/note1.png
 [INFO] Destroyed Resource<image>: lose/benjamin-happy.png
-[INFO] Destroyed Resource<image>: play/dirty-1.png
-[INFO] Destroyed Resource<image>: play/target.png
 [INFO] Destroyed Resource<image>: Play/bar.png?1600x150
 [INFO] Destroyed Resource<image>: stage-select/floor.png
+[INFO] Destroyed Resource<image>: play/dirty-1.png
 [INFO] Destroyed Resource<image>: Play/judge_area.png?120x120
 [INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
 [INFO] Destroyed Resource<image>: stage-select/dirt.png
-[INFO] Destroyed Resource<image>: icon.png
 [INFO] Destroyed Resource<font>: pirulen.ttf?24
 [INFO] Destroyed Resource<font>: pirulen.ttf?32
 [INFO] Destroyed Resource<font>: pirulen.ttf?48

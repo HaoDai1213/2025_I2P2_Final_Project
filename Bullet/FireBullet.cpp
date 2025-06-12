@@ -2,15 +2,12 @@
 #include <random>
 #include <string>
 
-#include "Enemy/Enemy.hpp"
 #include "Engine/Group.hpp"
 #include "Engine/Point.hpp"
 #include "FireBullet.hpp"
 #include "Player/Player.hpp"
 #include "Scene/PlayScene.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
-
-class Turret;
 
 FireBullet::FireBullet(Engine::Point position, Engine::Point forwardDirection, float rotation, float speed) : Bullet("play/bullet-7.png", speed, 10, position, forwardDirection, rotation - ALLEGRO_PI / 2) {
 }

@@ -38,6 +38,8 @@ public:
     static const int BlockSize;
     static const Engine::Point SpawnGridPoint;
     int MapId;
+    float MapBPM;
+    float duration;
     float ticks;
     static int gamescore;
     int playerSpeed;
@@ -54,6 +56,7 @@ public:
     Engine::Sprite *dangerIndicator;
     Player *player;     // important
     std::list<std::tuple<int, int, int>> bulletData;
+    std::list<std::tuple<int, int, int, int>> noteData;
     std::map<int, int> keyState;
     static Engine::Point GetClientSize();
     explicit PlayScene() = default;
@@ -66,7 +69,6 @@ public:
     void OnMouseUp(int button, int mx, int my) override;
     void OnKeyDown(int keyCode) override;
     void OnKeyUp(int keyCode) override;
-    void Hit();
     void ReadBullet();
     void ReadNote();
     void ConstructUI();

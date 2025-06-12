@@ -49,6 +49,13 @@ add_executable(2025_I2P2_Final_Project
     Engine/Sprite.cpp
     Engine/Sprite.hpp
 
+    Note/Note.cpp
+    Note/Note.hpp
+    Note/RedNote.cpp
+    Note/RedNote.hpp
+    Note/BlueNote.cpp
+    Note/BlueNote.hpp
+
     Player/Player.cpp
     Player/Player.hpp
     
@@ -66,11 +73,6 @@ add_executable(2025_I2P2_Final_Project
     Scene/SettingsScene.hpp
     Scene/ScoreboardScene.cpp
     Scene/ScoreboardScene.hpp
-
-    Turret/MachineGunTurret.cpp
-    Turret/MachineGunTurret.hpp
-    Turret/Turret.cpp
-    Turret/Turret.hpp
 
     UI/Animation/DirtyEffect.cpp
     UI/Animation/DirtyEffect.hpp

@@ -512,6 +512,78 @@ Engine/Sprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Sprite.cpp.s
 .PHONY : Engine/Sprite.cpp.s
 
+Note/BlueNote.obj: Note/BlueNote.cpp.obj
+.PHONY : Note/BlueNote.obj
+
+# target to build an object file
+Note/BlueNote.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Note/BlueNote.cpp.obj
+.PHONY : Note/BlueNote.cpp.obj
+
+Note/BlueNote.i: Note/BlueNote.cpp.i
+.PHONY : Note/BlueNote.i
+
+# target to preprocess a source file
+Note/BlueNote.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Note/BlueNote.cpp.i
+.PHONY : Note/BlueNote.cpp.i
+
+Note/BlueNote.s: Note/BlueNote.cpp.s
+.PHONY : Note/BlueNote.s
+
+# target to generate assembly for a file
+Note/BlueNote.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Note/BlueNote.cpp.s
+.PHONY : Note/BlueNote.cpp.s
+
+Note/Note.obj: Note/Note.cpp.obj
+.PHONY : Note/Note.obj
+
+# target to build an object file
+Note/Note.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Note/Note.cpp.obj
+.PHONY : Note/Note.cpp.obj
+
+Note/Note.i: Note/Note.cpp.i
+.PHONY : Note/Note.i
+
+# target to preprocess a source file
+Note/Note.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Note/Note.cpp.i
+.PHONY : Note/Note.cpp.i
+
+Note/Note.s: Note/Note.cpp.s
+.PHONY : Note/Note.s
+
+# target to generate assembly for a file
+Note/Note.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Note/Note.cpp.s
+.PHONY : Note/Note.cpp.s
+
+Note/RedNote.obj: Note/RedNote.cpp.obj
+.PHONY : Note/RedNote.obj
+
+# target to build an object file
+Note/RedNote.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Note/RedNote.cpp.obj
+.PHONY : Note/RedNote.cpp.obj
+
+Note/RedNote.i: Note/RedNote.cpp.i
+.PHONY : Note/RedNote.i
+
+# target to preprocess a source file
+Note/RedNote.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Note/RedNote.cpp.i
+.PHONY : Note/RedNote.cpp.i
+
+Note/RedNote.s: Note/RedNote.cpp.s
+.PHONY : Note/RedNote.s
+
+# target to generate assembly for a file
+Note/RedNote.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Note/RedNote.cpp.s
+.PHONY : Note/RedNote.cpp.s
+
 Player/Player.obj: Player/Player.cpp.obj
 .PHONY : Player/Player.obj
 
@@ -703,54 +775,6 @@ Scene/WinScene.s: Scene/WinScene.cpp.s
 Scene/WinScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/WinScene.cpp.s
 .PHONY : Scene/WinScene.cpp.s
-
-Turret/MachineGunTurret.obj: Turret/MachineGunTurret.cpp.obj
-.PHONY : Turret/MachineGunTurret.obj
-
-# target to build an object file
-Turret/MachineGunTurret.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/MachineGunTurret.cpp.obj
-.PHONY : Turret/MachineGunTurret.cpp.obj
-
-Turret/MachineGunTurret.i: Turret/MachineGunTurret.cpp.i
-.PHONY : Turret/MachineGunTurret.i
-
-# target to preprocess a source file
-Turret/MachineGunTurret.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/MachineGunTurret.cpp.i
-.PHONY : Turret/MachineGunTurret.cpp.i
-
-Turret/MachineGunTurret.s: Turret/MachineGunTurret.cpp.s
-.PHONY : Turret/MachineGunTurret.s
-
-# target to generate assembly for a file
-Turret/MachineGunTurret.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/MachineGunTurret.cpp.s
-.PHONY : Turret/MachineGunTurret.cpp.s
-
-Turret/Turret.obj: Turret/Turret.cpp.obj
-.PHONY : Turret/Turret.obj
-
-# target to build an object file
-Turret/Turret.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/Turret.cpp.obj
-.PHONY : Turret/Turret.cpp.obj
-
-Turret/Turret.i: Turret/Turret.cpp.i
-.PHONY : Turret/Turret.i
-
-# target to preprocess a source file
-Turret/Turret.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/Turret.cpp.i
-.PHONY : Turret/Turret.cpp.i
-
-Turret/Turret.s: Turret/Turret.cpp.s
-.PHONY : Turret/Turret.s
-
-# target to generate assembly for a file
-Turret/Turret.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Turret/Turret.cpp.s
-.PHONY : Turret/Turret.cpp.s
 
 UI/Animation/DirtyEffect.obj: UI/Animation/DirtyEffect.cpp.obj
 .PHONY : UI/Animation/DirtyEffect.obj
@@ -977,6 +1001,15 @@ help:
 	@echo ... Engine/Sprite.obj
 	@echo ... Engine/Sprite.i
 	@echo ... Engine/Sprite.s
+	@echo ... Note/BlueNote.obj
+	@echo ... Note/BlueNote.i
+	@echo ... Note/BlueNote.s
+	@echo ... Note/Note.obj
+	@echo ... Note/Note.i
+	@echo ... Note/Note.s
+	@echo ... Note/RedNote.obj
+	@echo ... Note/RedNote.i
+	@echo ... Note/RedNote.s
 	@echo ... Player/Player.obj
 	@echo ... Player/Player.i
 	@echo ... Player/Player.s
@@ -1001,12 +1034,6 @@ help:
 	@echo ... Scene/WinScene.obj
 	@echo ... Scene/WinScene.i
 	@echo ... Scene/WinScene.s
-	@echo ... Turret/MachineGunTurret.obj
-	@echo ... Turret/MachineGunTurret.i
-	@echo ... Turret/MachineGunTurret.s
-	@echo ... Turret/Turret.obj
-	@echo ... Turret/Turret.i
-	@echo ... Turret/Turret.s
 	@echo ... UI/Animation/DirtyEffect.obj
 	@echo ... UI/Animation/DirtyEffect.i
 	@echo ... UI/Animation/DirtyEffect.s

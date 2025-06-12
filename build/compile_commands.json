@@ -97,6 +97,24 @@
 },
 {
   "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Note\\Note.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Note\\Note.cpp",
+  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Note/Note.cpp",
+  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Note/Note.cpp.obj"
+},
+{
+  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Note\\RedNote.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Note\\RedNote.cpp",
+  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Note/RedNote.cpp",
+  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Note/RedNote.cpp.obj"
+},
+{
+  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Note\\BlueNote.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Note\\BlueNote.cpp",
+  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Note/BlueNote.cpp",
+  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Note/BlueNote.cpp.obj"
+},
+{
+  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
   "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Player\\Player.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Player\\Player.cpp",
   "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Player/Player.cpp",
   "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Player/Player.cpp.obj"
@@ -142,18 +160,6 @@
   "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Scene\\ScoreboardScene.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Scene\\ScoreboardScene.cpp",
   "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Scene/ScoreboardScene.cpp",
   "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Scene/ScoreboardScene.cpp.obj"
-},
-{
-  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
-  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Turret\\MachineGunTurret.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Turret\\MachineGunTurret.cpp",
-  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Turret/MachineGunTurret.cpp",
-  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Turret/MachineGunTurret.cpp.obj"
-},
-{
-  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
-  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Turret\\Turret.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Turret\\Turret.cpp",
-  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Turret/Turret.cpp",
-  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Turret/Turret.cpp.obj"
 },
 {
   "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",

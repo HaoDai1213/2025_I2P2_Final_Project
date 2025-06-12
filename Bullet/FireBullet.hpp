@@ -3,7 +3,6 @@
 #include "Bullet.hpp"
 
 class Player;
-class Turret;
 namespace Engine {
     struct Point;
 }   // namespace Engine
