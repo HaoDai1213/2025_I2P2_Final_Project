@@ -13,5 +13,5 @@ Resource
 .DS_Store
 
 # Others
-build/log.txt
-Resource/scoreboard.txt
+log.txt
+scoreboard.txt
