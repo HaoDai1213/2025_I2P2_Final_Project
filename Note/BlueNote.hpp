@@ -8,7 +8,7 @@ namespace Engine {
 
 class BlueNote : public Note {
 public:
-    explicit BlueNote(int timing, int line, float speed, float speedMult, Engine::Point position, Engine::Point forwardDirection);
+    explicit BlueNote(int appearTiming, int hitTiming, int line, float speed, float speedMult, Engine::Point position, Engine::Point forwardDirection);
 };
 
 #endif   // BLUENOTE_HPP

@@ -824,6 +824,78 @@ UI/Animation/ExplosionEffect.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/ExplosionEffect.cpp.s
 .PHONY : UI/Animation/ExplosionEffect.cpp.s
 
+UI/Animation/GreatEffect.obj: UI/Animation/GreatEffect.cpp.obj
+.PHONY : UI/Animation/GreatEffect.obj
+
+# target to build an object file
+UI/Animation/GreatEffect.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/GreatEffect.cpp.obj
+.PHONY : UI/Animation/GreatEffect.cpp.obj
+
+UI/Animation/GreatEffect.i: UI/Animation/GreatEffect.cpp.i
+.PHONY : UI/Animation/GreatEffect.i
+
+# target to preprocess a source file
+UI/Animation/GreatEffect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/GreatEffect.cpp.i
+.PHONY : UI/Animation/GreatEffect.cpp.i
+
+UI/Animation/GreatEffect.s: UI/Animation/GreatEffect.cpp.s
+.PHONY : UI/Animation/GreatEffect.s
+
+# target to generate assembly for a file
+UI/Animation/GreatEffect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/GreatEffect.cpp.s
+.PHONY : UI/Animation/GreatEffect.cpp.s
+
+UI/Animation/MissEffect.obj: UI/Animation/MissEffect.cpp.obj
+.PHONY : UI/Animation/MissEffect.obj
+
+# target to build an object file
+UI/Animation/MissEffect.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/MissEffect.cpp.obj
+.PHONY : UI/Animation/MissEffect.cpp.obj
+
+UI/Animation/MissEffect.i: UI/Animation/MissEffect.cpp.i
+.PHONY : UI/Animation/MissEffect.i
+
+# target to preprocess a source file
+UI/Animation/MissEffect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/MissEffect.cpp.i
+.PHONY : UI/Animation/MissEffect.cpp.i
+
+UI/Animation/MissEffect.s: UI/Animation/MissEffect.cpp.s
+.PHONY : UI/Animation/MissEffect.s
+
+# target to generate assembly for a file
+UI/Animation/MissEffect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/MissEffect.cpp.s
+.PHONY : UI/Animation/MissEffect.cpp.s
+
+UI/Animation/PerfectEffect.obj: UI/Animation/PerfectEffect.cpp.obj
+.PHONY : UI/Animation/PerfectEffect.obj
+
+# target to build an object file
+UI/Animation/PerfectEffect.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/PerfectEffect.cpp.obj
+.PHONY : UI/Animation/PerfectEffect.cpp.obj
+
+UI/Animation/PerfectEffect.i: UI/Animation/PerfectEffect.cpp.i
+.PHONY : UI/Animation/PerfectEffect.i
+
+# target to preprocess a source file
+UI/Animation/PerfectEffect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/PerfectEffect.cpp.i
+.PHONY : UI/Animation/PerfectEffect.cpp.i
+
+UI/Animation/PerfectEffect.s: UI/Animation/PerfectEffect.cpp.s
+.PHONY : UI/Animation/PerfectEffect.s
+
+# target to generate assembly for a file
+UI/Animation/PerfectEffect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/PerfectEffect.cpp.s
+.PHONY : UI/Animation/PerfectEffect.cpp.s
+
 UI/Component/Image.obj: UI/Component/Image.cpp.obj
 .PHONY : UI/Component/Image.obj
 
@@ -1040,6 +1112,15 @@ help:
 	@echo ... UI/Animation/ExplosionEffect.obj
 	@echo ... UI/Animation/ExplosionEffect.i
 	@echo ... UI/Animation/ExplosionEffect.s
+	@echo ... UI/Animation/GreatEffect.obj
+	@echo ... UI/Animation/GreatEffect.i
+	@echo ... UI/Animation/GreatEffect.s
+	@echo ... UI/Animation/MissEffect.obj
+	@echo ... UI/Animation/MissEffect.i
+	@echo ... UI/Animation/MissEffect.s
+	@echo ... UI/Animation/PerfectEffect.obj
+	@echo ... UI/Animation/PerfectEffect.i
+	@echo ... UI/Animation/PerfectEffect.s
 	@echo ... UI/Component/Image.obj
 	@echo ... UI/Component/Image.i
 	@echo ... UI/Component/Image.s

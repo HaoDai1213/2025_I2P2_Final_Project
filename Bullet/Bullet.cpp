@@ -20,11 +20,9 @@ Bullet::Bullet(std::string img, float speed, float damage, Engine::Point positio
     Velocity = forwardDirection.Normalize() * speed;
     Rotation = rotation;
     CollisionRadius = 4;
-    test = 0;
 }
 void Bullet::Update(float deltaTime) {
     Sprite::Update(deltaTime);
-    test += deltaTime;
     PlayScene *scene = getPlayScene();
     // Can be improved by Spatial Hash, Quad Tree, ...
     // However simply loop through all enemies is enough for this program.
@@ -39,6 +37,5 @@ void Bullet::Update(float deltaTime) {
     // Check if out of boundary.
     if (!Engine::Collider::IsRectOverlap(Position - Size / 2, Position + Size / 2, Engine::Point(0, 0), PlayScene::GetClientSize())) {
         getPlayScene()->BulletGroup->RemoveObject(objectIterator);
-        Engine::LOG(Engine::INFO) << "reached the end: " << test;
     }
 }

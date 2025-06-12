@@ -31,7 +31,8 @@ const int PlayScene::MapWidth = 25, PlayScene::MapHeight = 13;
 const int PlayScene::BlockSize = 64;
 const Engine::Point PlayScene::SpawnGridPoint = Engine::Point(3, 7);
 const int sliderSize = 1500;
-const int noteSize = 220;
+const int noteSize = 110;
+const int offset = -60; // ?
 std::map<char, bool> keyState = {{'W', false}, {'A', false}, {'S', false}, {'D', false}};
 
 Engine::Point PlayScene::GetClientSize() {
@@ -43,15 +44,18 @@ int rep;
 
 void PlayScene::Initialize() {
     keyState.clear();
+    gamescore = 0;
     ticks = 0;
     lives = 0;
     SpeedMult = 1;
+    isRedHit = false;
+    isBlueHit = false;
     // Add groups from bottom to top.
+    AddNewControlObject(UIGroup = new Group());
     AddNewObject(GroundEffectGroup = new Group());
     AddNewObject(DebugIndicatorGroup = new Group());
     AddNewObject(BulletGroup = new Group());
     AddNewObject(EffectGroup = new Group());
-    AddNewControlObject(UIGroup = new Group());
     AddNewObject(NoteGroup = new Group());
 
     ReadBullet();
@@ -64,15 +68,12 @@ void PlayScene::Initialize() {
 
     ConstructUI();
     // Preload Lose Scene
-    deathBGMInstance = Engine::Resources::GetInstance().GetSampleInstance("astronomia.ogg");
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     // Start BGM.
     bgmId = AudioHelper::PlayBGM("song" + std::to_string(MapId) + ".mp3");
 }
 void PlayScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
-    AudioHelper::StopSample(deathBGMInstance);
-    deathBGMInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
 }
 void PlayScene::Update(float deltaTime) {
@@ -112,21 +113,35 @@ void PlayScene::Update(float deltaTime) {
         if (!noteData.empty()) {
             auto cur_note = noteData.front();
             auto [nTiming, nLine, nType, nMult] = cur_note;
-            int cur_nt = nTiming - duration * 1000 / nMult;
-            if (ticks * 1000 >= cur_nt) {
+            int aprTiming = nTiming - duration * 1000 / nMult;
+            if (ticks * 1000 >= aprTiming) {
                 noteData.pop_front();
                 switch (nType) {
                     case 1:
-                        NoteGroup->AddNewObject(new RedNote(cur_nt, nLine, (sliderSize - noteSize) / duration * nMult, nMult, Engine::Point(24 * BlockSize, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
-                        Engine::LOG(Engine::INFO) << "now ticks: " << ticks * 1000;
+                        NoteGroup->AddNewObject(new RedNote(aprTiming, nTiming, nLine, (sliderSize - noteSize) / duration, nMult, \
+                                                            Engine::Point(24 * BlockSize, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
                         break;
                     case 2:
-                        NoteGroup->AddNewObject(new BlueNote(cur_nt, nLine, (sliderSize - noteSize) / duration * nMult, nMult, Engine::Point(24 * BlockSize, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
+                        NoteGroup->AddNewObject(new BlueNote(aprTiming, nTiming, nLine, (sliderSize - noteSize) / duration, nMult, \
+                                                            Engine::Point(24 * BlockSize, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
                         break;
                     default:
                         continue;
                 }
             }
+        }
+
+        if (isRedHit) {
+            HitObject(ticks * 1000 + offset, 1);
+            AudioHelper::PlayAudio("note1.wav");
+            isRedHit = false;
+            UIScore->Text = std::string("Score ") + std::to_string(gamescore);
+        }
+        if (isBlueHit) {
+            HitObject(ticks * 1000 + offset, 2);
+            AudioHelper::PlayAudio("note2.wav");
+            isBlueHit = false;
+            UIScore->Text = std::string("Score ") + std::to_string(gamescore);
         }
     }
 
@@ -177,7 +192,7 @@ void PlayScene::OnKeyDown(int keyCode) {
       W               O
     A S D (F G H J) K L ;
     */
-    Engine::LOG(Engine::INFO) << keyCode << " is down";
+    // Engine::LOG(Engine::INFO) << keyCode << " is down";
     if (keyCode == ALLEGRO_KEY_W || keyCode == ALLEGRO_KEY_O) { 
         keyState['W'] = true;
     }   
@@ -190,11 +205,17 @@ void PlayScene::OnKeyDown(int keyCode) {
     else if (keyCode == ALLEGRO_KEY_D || keyCode == ALLEGRO_KEY_SEMICOLON) {
         keyState['D'] = true;
     }
+    else if (keyCode == ALLEGRO_KEY_G || keyCode == ALLEGRO_KEY_H) {
+        isRedHit = true;
+    }
+    else if (keyCode == ALLEGRO_KEY_F || keyCode == ALLEGRO_KEY_J) {
+        isBlueHit = true;
+    }
 }
 
 void PlayScene::OnKeyUp(int keyCode) {
     IScene::OnKeyUp(keyCode);
-    Engine::LOG(Engine::INFO) << keyCode << " is up";
+    // Engine::LOG(Engine::INFO) << keyCode << " is up";
     if (keyCode == ALLEGRO_KEY_W || keyCode == ALLEGRO_KEY_O) { 
         keyState['W'] = false;
     }   
@@ -230,18 +251,60 @@ void PlayScene::ReadNote() {
     duration = MapBPM / 60;
     while (fin >> timing >> line >> type >> mult) {
         noteData.push_back({timing, line, type, mult});
-        Engine::LOG(Engine::INFO) << "Note loaded now: " << timing << ", " << type << ", " << mult;
+        // Engine::LOG(Engine::INFO) << "Note loaded now: " << timing << ", " << type << ", " << mult;
     }
 }
 
 void PlayScene::ConstructUI() {
     // Text
-    UIGroup->AddNewObject(new Engine::Label(std::string("Stage ") + std::to_string(MapId), "pirulen.ttf", 32, 1294, 0));
+    UIGroup->AddNewObject(UIScore = new Engine::Label(std::string("Score ") + std::to_string(gamescore), "pirulen.ttf", 32, 1294, 0, 255, 255, 255));
     UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 1294, 88, 255, 255, 255));
     // Image
     UIGroup->AddNewObject(new Engine::Image("Play/bar.png", 0, 200, 1600, 150));
     UIGroup->AddNewObject(new Engine::Image("Play/bar.png", 0, 650, 1600, 150));
-    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 100, 200 + 15, 120, 120));
-    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 100, 650 + 15, 120, 120));
+    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 100, 200 + 75, 120, 120, 0.5, 0.5));
+    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 100, 650 + 75, 120, 120, 0.5, 0.5));
 }
 
+void PlayScene::HitObject(int curTiming, int type) {
+    Note *FirstNote = nullptr;
+    int minDiff = INT_MAX;
+
+    for (auto &obj : NoteGroup->GetObjects()) {
+        Note* curNote = dynamic_cast<Note*>(obj);
+        if (!curNote) continue;
+
+        int hitDiff = std::abs(curNote->getHitTiming() - curTiming);
+        if (hitDiff <= curNote->judgement_ms && hitDiff < minDiff) {
+            FirstNote = curNote;
+            minDiff = hitDiff;
+        }
+    }
+
+    if (FirstNote) {
+        if (minDiff <= Note::judgement_ms) {
+            if (type == FirstNote->getType()) {
+                if (minDiff <= Note::judgement_pf) {
+                    Engine::LOG(Engine::INFO) << "perfect! " << curTiming << ", " << FirstNote->getHitTiming();
+                    NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
+                    gamescore += 1000;
+                }
+                else if (minDiff <= Note::judgement_gr) {
+                    Engine::LOG(Engine::INFO) << "great! " << curTiming << ", " << FirstNote->getHitTiming();
+                    NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
+                    gamescore += 500;
+                }
+                else {
+                    Engine::LOG(Engine::INFO) << "miss (late)! " << curTiming << ", " << FirstNote->getHitTiming();
+                    NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
+                    AudioHelper::PlayAudio("miss.mp3");
+                }
+            }
+            else {
+                Engine::LOG(Engine::INFO) << "miss! " << curTiming << ", " << FirstNote->getHitTiming();
+                NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
+                AudioHelper::PlayAudio("miss.mp3");
+            }
+        }
+    }
+}

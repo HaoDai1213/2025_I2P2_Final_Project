@@ -21,6 +21,5 @@ public:
     Player *Target;
     explicit Bullet(std::string img, float speed, float damage, Engine::Point position, Engine::Point forwardDirection, float rotation);
     void Update(float deltaTime) override;
-    int test;
 };
 #endif   // BULLET_HPP

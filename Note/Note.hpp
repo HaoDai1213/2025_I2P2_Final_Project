@@ -11,7 +11,8 @@ namespace Engine {
 
 class Note : public Engine::Sprite {
 protected:
-    int timing;
+    int appearTiming;
+    int hitTiming;
     int type;   // 1 for red, 2 for blue
     int line;   // 0 for top, 1 for down
     float speed;
@@ -20,13 +21,14 @@ protected:
     virtual void OnExplode();
 
 public:
-    int judgement_pf;
-    int judgement_gr;
-    int judgement_ms;
-    explicit Note(std::string img, int timing, int line, int type, float speed, float speedMult, Engine::Point position, Engine::Point forwardDirection);
+    static int judgement_pf;
+    static int judgement_gr;
+    static int judgement_ms;
+    explicit Note(std::string img, int appearTiming, int hitTimung, int line, int type, float speed, float speedMult, Engine::Point position, Engine::Point forwardDirection);
     void Update(float deltaTime) override;
     void Draw() const override;
-    void HitNote(int timing);
+    int getHitTiming();
+    int getType();
 };
 
 #endif  // NOTE_HPP

@@ -175,6 +175,24 @@
 },
 {
   "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\UI\\Animation\\MissEffect.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\UI\\Animation\\MissEffect.cpp",
+  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/UI/Animation/MissEffect.cpp",
+  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/MissEffect.cpp.obj"
+},
+{
+  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\UI\\Animation\\GreatEffect.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\UI\\Animation\\GreatEffect.cpp",
+  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/UI/Animation/GreatEffect.cpp",
+  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/GreatEffect.cpp.obj"
+},
+{
+  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\UI\\Animation\\PerfectEffect.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\UI\\Animation\\PerfectEffect.cpp",
+  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/UI/Animation/PerfectEffect.cpp",
+  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/PerfectEffect.cpp.obj"
+},
+{
+  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
   "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\UI\\Component\\Image.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\UI\\Component\\Image.cpp",
   "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/UI/Component/Image.cpp",
   "output": "CMakeFiles/2025_I2P2_Final_Project.dir/UI/Component/Image.cpp.obj"

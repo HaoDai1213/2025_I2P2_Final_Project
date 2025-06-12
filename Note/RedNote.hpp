@@ -8,7 +8,7 @@ namespace Engine {
 
 class RedNote : public Note {
 public:
-    explicit RedNote(int timing, int line, float speed, float speedMult, Engine::Point position, Engine::Point forwardDirection);
+    explicit RedNote(int appearTiming, int hitTiming, int line, float speed, float speedMult, Engine::Point position, Engine::Point forwardDirection);
 };
 
 #endif   // REDNOTE_HPP

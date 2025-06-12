@@ -20,7 +20,7 @@ std::string pname, pdate, ptime;
 int score, page, maxpage;
 
 struct scorecmp {
-    bool operator() (std::tuple<std::string, std::string, std::string, int> A, std::tuple<std::string, std::string, std::string, int> B) {
+    bool operator() (const std::tuple<std::string, std::string, std::string, int>& A, const std::tuple<std::string, std::string, std::string, int>& B) {
         return std::get<3>(A) > std::get<3>(B);
     }
 };

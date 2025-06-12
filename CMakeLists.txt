@@ -78,6 +78,12 @@ add_executable(2025_I2P2_Final_Project
     UI/Animation/DirtyEffect.hpp
     UI/Animation/ExplosionEffect.cpp
     UI/Animation/ExplosionEffect.hpp
+    UI/Animation/MissEffect.cpp
+    UI/Animation/MissEffect.hpp
+    UI/Animation/GreatEffect.cpp
+    UI/Animation/GreatEffect.hpp
+    UI/Animation/PerfectEffect.cpp
+    UI/Animation/PerfectEffect.hpp
     
     UI/Component/Image.cpp
     UI/Component/Image.hpp

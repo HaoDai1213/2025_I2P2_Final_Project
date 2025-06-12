@@ -11,7 +11,6 @@
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
 
-class Turret;
 class Player;
 class Bullet;
 namespace Engine {
@@ -24,11 +23,9 @@ namespace Engine {
 class PlayScene final : public Engine::IScene {
 private:
     ALLEGRO_SAMPLE_ID bgmId;
-    std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
 protected:
     int lives;
-    int money;
     int SpeedMult;
 
 public:
@@ -43,6 +40,8 @@ public:
     float ticks;
     static int gamescore;
     int playerSpeed;
+    bool isRedHit;
+    bool isBlueHit;
     // Map tiles.
     Group *GroundEffectGroup;
     Group *DebugIndicatorGroup;
@@ -50,7 +49,7 @@ public:
     Group *EffectGroup;
     Group *UIGroup;
     Group *NoteGroup;
-    Engine::Label *UIMoney;
+    Engine::Label *UIScore;
     Engine::Label *UILives;
     Engine::Image *imgTarget;
     Engine::Sprite *dangerIndicator;
@@ -72,6 +71,7 @@ public:
     void ReadBullet();
     void ReadNote();
     void ConstructUI();
+    void HitObject(int timing, int type);
     // void ModifyReadMapTiles();
 };
 

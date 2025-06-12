@@ -8,5 +8,5 @@
 #include "Scene/PlayScene.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
 
-BlueNote::BlueNote(int timing, int line, float speed, float speedMult, Engine::Point position, Engine::Point forwardDirection) : Note("play/note2.png", timing, line, 2, speed, speedMult, position, forwardDirection) {
+BlueNote::BlueNote(int appearTiming, int hitTiming, int line, float speed, float speedMult, Engine::Point position, Engine::Point forwardDirection) : Note("play/note2.png", appearTiming, hitTiming, line, 2, speed * speedMult, speedMult, position, forwardDirection) {
 }
