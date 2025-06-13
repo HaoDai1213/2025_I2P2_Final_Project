@@ -16,7 +16,6 @@ protected:
     float speed;
     float hp;
     PlayScene *getPlayScene();
-    bool isHit;
 
 public:
     bool alive;

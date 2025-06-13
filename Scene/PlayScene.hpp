@@ -65,7 +65,7 @@ public:
     Engine::Label *UICombo;
     Engine::Image *imgTarget;
     Engine::Sprite *dangerIndicator;
-    Player *player;     // important
+    Player *player;
     std::list<std::tuple<int, int, int>> bulletData;
     std::list<std::tuple<int, int, int, int>> noteData;
     std::map<int, int> keyState;

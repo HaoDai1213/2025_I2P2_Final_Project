@@ -304,23 +304,19 @@ void PlayScene::ConstructUI() {
 
 void PlayScene::HitObject(int curTiming, int type) {
     Note *FirstNote = nullptr;
-    int minDiff = INT_MAX;
+    int hitDiff = INT_MAX;
 
-    for (auto &obj : NoteGroup->GetObjects()) {
-        Note* curNote = dynamic_cast<Note*>(obj);
-        if (!curNote) continue;
-
-        int hitDiff = std::abs(curNote->getHitTiming() - curTiming);
-        if (hitDiff <= curNote->judgement_ms && hitDiff < minDiff) {
-            FirstNote = curNote;
-            minDiff = hitDiff;
-        }
+    Engine::LOG(Engine::INFO) << "curret have " << NoteGroup->GetObjects().size() << "notes";
+    if (NoteGroup->GetObjects().size()) {
+        auto obj = NoteGroup->GetObjects().front();
+        FirstNote = dynamic_cast<Note*>(obj);
+        hitDiff = std::abs(FirstNote->getHitTiming() - curTiming);
     }
 
     if (FirstNote) {
-        if (minDiff <= Note::judgement_ms) {
+        if (hitDiff <= Note::judgement_ms) {
             if (type == FirstNote->getType()) {
-                if (minDiff <= Note::judgement_pf) {
+                if (hitDiff <= Note::judgement_pf) {
                     noteCount++;
                     hitCount++;
                     combo++;
@@ -331,7 +327,7 @@ void PlayScene::HitObject(int curTiming, int type) {
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                     gamescore += 300 + 300 * (combo / 10);
                 }
-                else if (minDiff <= Note::judgement_gr) {
+                else if (hitDiff <= Note::judgement_gr) {
                     noteCount++;
                     hitCount += 0.5;
                     combo++;

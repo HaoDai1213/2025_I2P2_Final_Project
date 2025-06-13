@@ -23,7 +23,6 @@ Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
     speed = 8;
     hp = 100;
     CollisionRadius = 24;
-    isHit = false;
     alive = true;
 }
 
@@ -31,18 +30,12 @@ void Player::Hit(float damage) {
     hp -= damage;
     Engine::LOG(Engine::INFO) << "Player is hit: " << hp << " hp left";
     AudioHelper::PlayAudio("playerhit.wav");
-    isHit = true;   // set it in update
     if (hp <= 0) {
         alive = false;
     }
 }
 
 void Player::Update(float deltaTime) {
-    // Pre-calculate the velocity.
-    float remainSpeed = speed * deltaTime;
-    while (remainSpeed != 0) {
-        if (isHit) isHit = false;
-    }
     Rotation = atan2(Velocity.y, Velocity.x);
     Sprite::Update(deltaTime);
 }
