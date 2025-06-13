@@ -21,9 +21,9 @@ protected:
     virtual void OnExplode();
 
 public:
-    static int judgement_pf;
-    static int judgement_gr;
-    static int judgement_ms;
+    static const int judgement_pf;
+    static const int judgement_gr;
+    static const int judgement_ms;
     explicit Note(std::string img, int appearTiming, int hitTimung, int line, int type, float speed, float speedMult, Engine::Point position, Engine::Point forwardDirection);
     void Update(float deltaTime) override;
     void Draw() const override;

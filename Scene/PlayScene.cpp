@@ -9,6 +9,7 @@
 #include <vector>
 #include <map>
 #include <tuple>
+#include <cstdio>
 
 #include "Bullet/Bullet.hpp"
 #include "Bullet/FireBullet.hpp"
@@ -42,17 +43,31 @@ Engine::Point PlayScene::GetClientSize() {
     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 }
 
+int PlayScene::PFcount;
+int PlayScene::GRcount;
+int PlayScene::MScount;
 int PlayScene::gamescore;   // static
+float PlayScene::accuracy;
 int rep;
+char scoreBuf[30];
+char accBuf[30];
 
 void PlayScene::Initialize() {
     keyState.clear();
     gamescore = 0;
+    accuracy = 0;
+    noteCount = 0;
+    hitCount = 0;
+    combo = 0;
     ticks = 0;
+    endTick = 0;
     lives = 0;
     SpeedMult = 1;
     isRedHit = false;
     isBlueHit = false;
+    PFcount = 0;
+    GRcount = 0;
+    MScount = 0;
     // Add groups from bottom to top.
     AddNewControlObject(UIGroup = new Group());
     AddNewObject(GroundEffectGroup = new Group());
@@ -63,6 +78,10 @@ void PlayScene::Initialize() {
 
     ReadBullet();
     ReadNote();
+    lastBullet = std::get<0> (bulletData.back()) + 1000 * (1600 / std::get<2> (bulletData.back()));
+    lastNote = std::get<0> (noteData.back());
+    endTick = (lastBullet > lastNote) ? lastBullet + 3000 : lastNote + 3000;
+    Engine::LOG(Engine::INFO) << "LB, LN: " << lastBullet << ", " << lastNote << ", ET: " << endTick ;
 
     // Things related to player 
     player = new Player("play/player.png", SpawnGridPoint.x * BlockSize, SpawnGridPoint.y * BlockSize);
@@ -138,13 +157,24 @@ void PlayScene::Update(float deltaTime) {
             HitObject(ticks * 1000 + offset, 1);
             AudioHelper::PlayAudio("note1.wav");
             isRedHit = false;
-            UIScore->Text = std::string("Score ") + std::to_string(gamescore);
+            std::sprintf(scoreBuf, "Score %08d", gamescore);
+            UIScore->Text = scoreBuf;
         }
         if (isBlueHit) {
             HitObject(ticks * 1000 + offset, 2);
             AudioHelper::PlayAudio("note2.wav");
             isBlueHit = false;
-            UIScore->Text = std::string("Score ") + std::to_string(gamescore);
+            std::sprintf(scoreBuf, "Score %08d", gamescore);
+            UIScore->Text = scoreBuf;
+        }
+        if (noteCount != 0) accuracy = hitCount / noteCount;
+        std::sprintf(accBuf, "Accuracy %.2f%%", accuracy * 100);
+        UIAcc->Text = accBuf;
+
+        UICombo->Text = std::string("combo ") + std::to_string(combo);
+        
+        if (ticks * 1000 > endTick) {
+            Engine::GameEngine::GetInstance().ChangeScene("win");
         }
     }
 
@@ -239,7 +269,8 @@ void PlayScene::ReadBullet() {
     bulletData.clear();
     std::ifstream fin(filename);
     while (fin >> timing >> pos >> speed) {
-        bulletData.push_back({timing, pos, speed});
+        if (pos > 300) pos = 300;
+        bulletData.push_back({timing, pos + 350, speed});
         // Engine::LOG(Engine::INFO) << "Bullet loaded now: " << timing << ", " << pos << ", " << speed;
     }
     fin.close();
@@ -260,13 +291,15 @@ void PlayScene::ReadNote() {
 
 void PlayScene::ConstructUI() {
     // Text
-    UIGroup->AddNewObject(UIScore = new Engine::Label(std::string("Score ") + std::to_string(gamescore), "pirulen.ttf", 32, 1294, 0, 255, 255, 255));
-    UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 1294, 88, 255, 255, 255));
+    UIGroup->AddNewObject(UIScore = new Engine::Label(std::string("Score 00000000"), "pirulen.ttf", 32, 12, 12, 255, 255, 255));
+    UIGroup->AddNewObject(UIAcc = new Engine::Label(std::string("Accuracy ") + std::to_string(accuracy * 100), "pirulen.ttf", 24, 12, 56, 255, 255, 255));
+    UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 12, 100, 255, 255, 255));
+    UIGroup->AddNewObject(UICombo = new Engine::Label(std::string("combo ") + std::to_string(combo), "pirulen.ttf", 32, 800 - 100, 200 - 20, 255, 255, 255, 255, 0, 1));
     // Image
     UIGroup->AddNewObject(new Engine::Image("Play/bar.png", 0, 200, 1600, 150));
     UIGroup->AddNewObject(new Engine::Image("Play/bar.png", 0, 650, 1600, 150));
-    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 100, 200 + 75, 120, 120, 0.5, 0.5));
-    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 100, 650 + 75, 120, 120, 0.5, 0.5));
+    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 110, 200 + 75, 120, 120, 0.5, 0.5));
+    UIGroup->AddNewObject(new Engine::Image("Play/judge_area.png", 110, 650 + 75, 120, 120, 0.5, 0.5));
 }
 
 void PlayScene::HitObject(int curTiming, int type) {
@@ -288,30 +321,44 @@ void PlayScene::HitObject(int curTiming, int type) {
         if (minDiff <= Note::judgement_ms) {
             if (type == FirstNote->getType()) {
                 if (minDiff <= Note::judgement_pf) {
-                    EffectGroup->AddNewObject(new PerfectEffect(100, 200 + 75));
-                    EffectGroup->AddNewObject(new PerfectEffect(100, 650 + 75));
+                    noteCount++;
+                    hitCount++;
+                    combo++;
+                    PFcount++;
+                    EffectGroup->AddNewObject(new PerfectEffect(110, 200 + 75));
+                    EffectGroup->AddNewObject(new PerfectEffect(110, 650 + 75));
                     Engine::LOG(Engine::INFO) << "perfect! " << curTiming << ", " << FirstNote->getHitTiming();
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
-                    gamescore += 1000;
+                    gamescore += 300 + 300 * (combo / 10);
                 }
                 else if (minDiff <= Note::judgement_gr) {
-                    EffectGroup->AddNewObject(new GreatEffect(100, 200 + 75));
-                    EffectGroup->AddNewObject(new GreatEffect(100, 650 + 75));
+                    noteCount++;
+                    hitCount += 0.5;
+                    combo++;
+                    GRcount++;
+                    EffectGroup->AddNewObject(new GreatEffect(110, 200 + 75));
+                    EffectGroup->AddNewObject(new GreatEffect(110, 650 + 75));
                     Engine::LOG(Engine::INFO) << "great! " << curTiming << ", " << FirstNote->getHitTiming();
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
-                    gamescore += 500;
+                    gamescore += 150 + 150 * (combo / 10);
                 }
                 else {
-                    EffectGroup->AddNewObject(new MissEffect(100, 200 + 75));
-                    EffectGroup->AddNewObject(new MissEffect(100, 650 + 75));
+                    noteCount++;
+                    combo = 0;
+                    MScount++;
+                    EffectGroup->AddNewObject(new MissEffect(110, 200 + 75));
+                    EffectGroup->AddNewObject(new MissEffect(110, 650 + 75));
                     Engine::LOG(Engine::INFO) << "miss (late)! " << curTiming << ", " << FirstNote->getHitTiming();
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                     AudioHelper::PlayAudio("miss.mp3");
                 }
             }
             else {
-                EffectGroup->AddNewObject(new MissEffect(100, 200 + 75));
-                EffectGroup->AddNewObject(new MissEffect(100, 650 + 75));
+                noteCount++;
+                combo = 0;
+                MScount++;
+                EffectGroup->AddNewObject(new MissEffect(110, 200 + 75));
+                EffectGroup->AddNewObject(new MissEffect(110, 650 + 75));
                 Engine::LOG(Engine::INFO) << "miss! " << curTiming << ", " << FirstNote->getHitTiming();
                 NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                 AudioHelper::PlayAudio("miss.mp3");

@@ -22,7 +22,7 @@ PlayScene *Player::getPlayScene() {
 Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
     speed = 8;
     hp = 100;
-    CollisionRadius = 20;
+    CollisionRadius = 24;
     isHit = false;
     alive = true;
 }

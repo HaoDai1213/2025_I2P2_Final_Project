@@ -10,6 +10,7 @@ private:
     ALLEGRO_SAMPLE_ID bgmId;
     Engine::Label *nameLabel;
     int Score;
+    float Acc;
     std::string playDate;
     std::string playTime;
 

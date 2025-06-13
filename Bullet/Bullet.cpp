@@ -19,7 +19,7 @@ void Bullet::OnExplode(Player *player) {
 Bullet::Bullet(std::string img, float speed, float damage, Engine::Point position, Engine::Point forwardDirection, float rotation) : Sprite(img, position.x, position.y), speed(speed), damage(damage) {
     Velocity = forwardDirection.Normalize() * speed;
     Rotation = rotation;
-    CollisionRadius = 4;
+    CollisionRadius = 5;
 }
 void Bullet::Update(float deltaTime) {
     Sprite::Update(deltaTime);

@@ -38,10 +38,20 @@ public:
     float MapBPM;
     float duration;
     float ticks;
+    float endTick;
+    float lastBullet;
+    float lastNote;
     static int gamescore;
+    static float accuracy;
+    float noteCount;
+    float hitCount;
+    int combo;
     int playerSpeed;
     bool isRedHit;
     bool isBlueHit;
+    static int PFcount;
+    static int GRcount;
+    static int MScount;
     // Map tiles.
     Group *GroundEffectGroup;
     Group *DebugIndicatorGroup;
@@ -50,7 +60,9 @@ public:
     Group *UIGroup;
     Group *NoteGroup;
     Engine::Label *UIScore;
+    Engine::Label *UIAcc;
     Engine::Label *UILives;
+    Engine::Label *UICombo;
     Engine::Image *imgTarget;
     Engine::Sprite *dangerIndicator;
     Player *player;     // important

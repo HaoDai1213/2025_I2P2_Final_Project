@@ -3,6 +3,7 @@
 #include <fstream>
 #include <ctime>
 #include <iostream>
+#include <cstdio>
 
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
@@ -18,6 +19,8 @@ int entering, count;
 time_t now;
 tm *localnow;
 std::string tmyr, tmmo, tmdy, tmhr, tmmn, tmsc;
+char resultScoreBuf[30];
+char resultAccBuf[30];
 
 void WinScene::Initialize() {
     std::ifstream in;
@@ -32,24 +35,54 @@ void WinScene::Initialize() {
     int halfH = h / 2;
 
     Score = PlayScene::gamescore;
+    Acc = PlayScene::accuracy * 100;
+    std::sprintf(resultScoreBuf, "%08d", Score);
+    std::sprintf(resultAccBuf, "%.2f%%", Acc);
+
     keyStrokes.clear();
 
-    AddNewObject(new Engine::Image("win/benjamin-sad.png", halfW, halfH - 100, 300, 300, 0.5, 0.5));
-    AddNewObject(new Engine::Label("You Win!", "pirulen.ttf", 48, halfW, halfH / 4 - 10, 255, 255, 255, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("RESULT", "pirulen.ttf", 60, halfW, halfH / 4 - 10, 127, 255, 212, 255, 0.5, 0.5));
     Engine::ImageButton *btn;
     btn = new Engine::ImageButton("win/dirt.png", "win/floor.png", halfW - 200, halfH * 7 / 4 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&WinScene::BackOnClick, this, 2));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW, halfH * 7 / 4, 0, 0, 0, 255, 0.5, 0.5));
 
-    AddNewObject(new Engine::Label("Score: ", "pirulen.ttf", 36, halfW - 100, h * 3 / 4 - 130, 255, 255, 255, 255, 0.5, 0.5));
-    AddNewObject(new Engine::Label(std::to_string(Score), "pirulen.ttf", 36, halfW + 100, h * 3 / 4 - 130, 255, 255, 255, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Score", "pirulen.ttf", 48, halfW - 600, halfH / 2, 255, 255, 255, 255, 0, 0.5));
+    AddNewObject(new Engine::Label(resultScoreBuf, "pirulen.ttf", 48, halfW - 20, halfH / 2, 224, 255, 255, 255, 1, 0.5));
+    AddNewObject(new Engine::Label("Perfect", "pirulen.ttf", 40, halfW - 600, halfH / 2  + 90, 255, 255, 255, 255, 0, 0.5));
+    AddNewObject(new Engine::Label(std::to_string(PlayScene::PFcount) + "x", "pirulen.ttf", 40, halfW - 20, halfH / 2  + 90, 255, 215, 0, 255, 1, 0.5));
+    AddNewObject(new Engine::Label("Great", "pirulen.ttf", 40, halfW - 600, halfH / 2 + 180, 255, 255, 255, 255, 0, 0.5));
+    AddNewObject(new Engine::Label(std::to_string(PlayScene::GRcount) + "x", "pirulen.ttf", 40, halfW - 20, halfH / 2  + 180, 192, 192, 192, 255, 1, 0.5));
+    AddNewObject(new Engine::Label("Miss", "pirulen.ttf", 40, halfW - 600, halfH / 2 + 270, 255, 255, 255, 255, 0, 0.5));
+    AddNewObject(new Engine::Label(std::to_string(PlayScene::MScount) + "x", "pirulen.ttf", 40, halfW - 20, halfH / 2  + 270, 220, 20, 60, 255, 1, 0.5));
+    AddNewObject(new Engine::Label("Accuracy", "pirulen.ttf", 40, halfW - 600, halfH / 2 + 360, 255, 255, 255, 255, 0, 0.5));
+    AddNewObject(new Engine::Label(resultAccBuf, "pirulen.ttf", 40, halfW - 20, halfH / 2  + 360, 152, 251, 152, 255, 1, 0.5));
+    
+    if (Acc == 100) {
+        AddNewObject(new Engine::Label("SS", "pirulen.ttf", 180, w * 3 / 4, halfH * 3 / 4 + 75, 215, 219, 221, 255, 0.5, 0.5));
+    }
+    else if (Acc >= 95) {
+        AddNewObject(new Engine::Label("S", "pirulen.ttf", 180, w * 3 / 4, halfH * 3 / 4 + 75, 247, 220, 111, 255, 0.5, 0.5));
+    }
+    else if (Acc >= 90) {
+        AddNewObject(new Engine::Label("A", "pirulen.ttf", 180, w * 3 / 4, halfH * 3 / 4 + 75, 130, 224, 170, 255, 0.5, 0.5));
+    }
+    else if (Acc >= 80) {
+        AddNewObject(new Engine::Label("B", "pirulen.ttf", 180, w * 3 / 4, halfH * 3 / 4 + 75, 133, 193, 233, 255, 0.5, 0.5));
+    }
+    else if (Acc >= 70) {
+        AddNewObject(new Engine::Label("C", "pirulen.ttf", 180, w * 3 / 4, halfH * 3 / 4 + 75, 195, 155, 211, 255, 0.5, 0.5));
+    }
+    else {
+        AddNewObject(new Engine::Label("D", "pirulen.ttf", 180, w * 3 / 4, halfH * 3 / 4 + 75, 230, 176, 170, 255, 0.5, 0.5));
+    }
+    // nametag
+    // AddNewObject(new Engine::Image("play/sand.png", halfW, h * 3 / 4 - 30, 400, 100, 0.5, 0.5));
+    // nameLabel = new Engine::Label(keyStrokes, "pirulen.ttf", 36, halfW - 180, h * 3 / 4 - 30, 0, 0, 0, 255, 0, 0.5);
+    // AddNewObject(nameLabel);
 
-    AddNewObject(new Engine::Image("play/sand.png", halfW, h * 3 / 4 - 30, 400, 100, 0.5, 0.5));
-    nameLabel = new Engine::Label(keyStrokes, "pirulen.ttf", 36, halfW - 180, h * 3 / 4 - 30, 0, 0, 0, 255, 0, 0.5);
-    AddNewObject(nameLabel);
-
-    bgmId = AudioHelper::PlayAudio("win.wav");
+    bgmId = AudioHelper::PlayBGM("applause.wav");
 }
 
 void WinScene::Terminate() {
@@ -59,10 +92,10 @@ void WinScene::Terminate() {
 
 void WinScene::Update(float deltaTime) {
     ticks += deltaTime;
+    // ?
     if (ticks > 4 && ticks < 100 &&
         dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetScene("play"))->MapId == 2) {
         ticks = 100;
-        bgmId = AudioHelper::PlayBGM("happy.ogg");
     }
 }
 
@@ -72,6 +105,7 @@ void WinScene::OnKeyDown(int keyCode) {
     int halfW = w / 2;
     int halfH = h / 2;
     IScene::OnKeyDown(keyCode);
+    /*
     if (entering) {
         if (keyCode >= ALLEGRO_KEY_A && keyCode <= ALLEGRO_KEY_Z && keyStrokes.size() < 10) {
             keyStrokes.push_back(keyCode - 1 + 'A');
@@ -85,6 +119,7 @@ void WinScene::OnKeyDown(int keyCode) {
             nameLabel->Text = keyStrokes;
         }
     }
+    */
 }
 
 void WinScene::BackOnClick(int stage) {
@@ -104,7 +139,7 @@ void WinScene::BackOnClick(int stage) {
     playTime = tmhr + ':' + tmmn + ':' + tmsc;
     // Output to the file
     std::ofstream out("C:/Users/barry/Desktop/2025_I2P2_TowerDefense-main/Resource/scoreboard.txt", std::ios::app);
-    if (keyStrokes.empty()) keyStrokes = "NULL";
+    if (keyStrokes.empty()) keyStrokes = "GUEST";
     out << playDate << " " << playTime << " " << keyStrokes << " " << Score << std::endl;
     out.flush();
     // Change to select scene.

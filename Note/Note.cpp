@@ -9,9 +9,10 @@
 #include "Engine/Sprite.hpp"
 #include "Note/Note.hpp"
 #include "Scene/PlayScene.hpp"
-int Note::judgement_pf = 41;
-int Note::judgement_gr = 108;
-int Note::judgement_ms = 125;
+#include "UI/Animation/MissEffect.hpp"
+const int Note::judgement_pf = 25;
+const int Note::judgement_gr = 75;
+const int Note::judgement_ms = 108;
 
 PlayScene *Note::getPlayScene() {
     return dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetActiveScene());
@@ -30,8 +31,14 @@ void Note::Update(float deltaTime) {
 
     // Check if out of boundary.
     if (!Engine::Collider::IsRectOverlap(Position - Size / 2, Position + Size / 2, Engine::Point(0, 0), PlayScene::GetClientSize())) {
+        PlayScene *scene = getPlayScene();
+        scene->noteCount++;
+        scene->combo = 0;
+        PlayScene::MScount++;
+        scene->EffectGroup->AddNewObject(new MissEffect(110, 200 + 75));
+        scene->EffectGroup->AddNewObject(new MissEffect(110, 650 + 75));
         Engine::LOG(Engine::INFO) << "miss! ";
-        getPlayScene()->NoteGroup->RemoveObject(objectIterator);
+        scene->NoteGroup->RemoveObject(objectIterator);
         AudioHelper::PlayAudio("miss.mp3");
     }
 }
