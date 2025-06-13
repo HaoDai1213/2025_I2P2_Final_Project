@@ -176,54 +176,6 @@ Bullet/FireBullet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Bullet/FireBullet.cpp.s
 .PHONY : Bullet/FireBullet.cpp.s
 
-Enemy/Enemy.obj: Enemy/Enemy.cpp.obj
-.PHONY : Enemy/Enemy.obj
-
-# target to build an object file
-Enemy/Enemy.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/Enemy.cpp.obj
-.PHONY : Enemy/Enemy.cpp.obj
-
-Enemy/Enemy.i: Enemy/Enemy.cpp.i
-.PHONY : Enemy/Enemy.i
-
-# target to preprocess a source file
-Enemy/Enemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/Enemy.cpp.i
-.PHONY : Enemy/Enemy.cpp.i
-
-Enemy/Enemy.s: Enemy/Enemy.cpp.s
-.PHONY : Enemy/Enemy.s
-
-# target to generate assembly for a file
-Enemy/Enemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/Enemy.cpp.s
-.PHONY : Enemy/Enemy.cpp.s
-
-Enemy/SoldierEnemy.obj: Enemy/SoldierEnemy.cpp.obj
-.PHONY : Enemy/SoldierEnemy.obj
-
-# target to build an object file
-Enemy/SoldierEnemy.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/SoldierEnemy.cpp.obj
-.PHONY : Enemy/SoldierEnemy.cpp.obj
-
-Enemy/SoldierEnemy.i: Enemy/SoldierEnemy.cpp.i
-.PHONY : Enemy/SoldierEnemy.i
-
-# target to preprocess a source file
-Enemy/SoldierEnemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/SoldierEnemy.cpp.i
-.PHONY : Enemy/SoldierEnemy.cpp.i
-
-Enemy/SoldierEnemy.s: Enemy/SoldierEnemy.cpp.s
-.PHONY : Enemy/SoldierEnemy.s
-
-# target to generate assembly for a file
-Enemy/SoldierEnemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/SoldierEnemy.cpp.s
-.PHONY : Enemy/SoldierEnemy.cpp.s
-
 Engine/Allegro5Exception.obj: Engine/Allegro5Exception.cpp.obj
 .PHONY : Engine/Allegro5Exception.obj
 
@@ -656,30 +608,6 @@ Scene/PlayScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/PlayScene.cpp.s
 .PHONY : Scene/PlayScene.cpp.s
 
-Scene/ScoreboardScene.obj: Scene/ScoreboardScene.cpp.obj
-.PHONY : Scene/ScoreboardScene.obj
-
-# target to build an object file
-Scene/ScoreboardScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/ScoreboardScene.cpp.obj
-.PHONY : Scene/ScoreboardScene.cpp.obj
-
-Scene/ScoreboardScene.i: Scene/ScoreboardScene.cpp.i
-.PHONY : Scene/ScoreboardScene.i
-
-# target to preprocess a source file
-Scene/ScoreboardScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/ScoreboardScene.cpp.i
-.PHONY : Scene/ScoreboardScene.cpp.i
-
-Scene/ScoreboardScene.s: Scene/ScoreboardScene.cpp.s
-.PHONY : Scene/ScoreboardScene.s
-
-# target to generate assembly for a file
-Scene/ScoreboardScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/ScoreboardScene.cpp.s
-.PHONY : Scene/ScoreboardScene.cpp.s
-
 Scene/SettingsScene.obj: Scene/SettingsScene.cpp.obj
 .PHONY : Scene/SettingsScene.obj
 
@@ -1031,12 +959,6 @@ help:
 	@echo ... Bullet/FireBullet.obj
 	@echo ... Bullet/FireBullet.i
 	@echo ... Bullet/FireBullet.s
-	@echo ... Enemy/Enemy.obj
-	@echo ... Enemy/Enemy.i
-	@echo ... Enemy/Enemy.s
-	@echo ... Enemy/SoldierEnemy.obj
-	@echo ... Enemy/SoldierEnemy.i
-	@echo ... Enemy/SoldierEnemy.s
 	@echo ... Engine/Allegro5Exception.obj
 	@echo ... Engine/Allegro5Exception.i
 	@echo ... Engine/Allegro5Exception.s
@@ -1091,9 +1013,6 @@ help:
 	@echo ... Scene/PlayScene.obj
 	@echo ... Scene/PlayScene.i
 	@echo ... Scene/PlayScene.s
-	@echo ... Scene/ScoreboardScene.obj
-	@echo ... Scene/ScoreboardScene.i
-	@echo ... Scene/ScoreboardScene.s
 	@echo ... Scene/SettingsScene.obj
 	@echo ... Scene/SettingsScene.i
 	@echo ... Scene/SettingsScene.s

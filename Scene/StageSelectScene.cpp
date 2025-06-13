@@ -6,9 +6,11 @@
 #include <vector>
 #include <set>
 #include <cstdio>
+#include <algorithm>
 
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
+#include "Engine/LOG.hpp"
 #include "Engine/Point.hpp"
 #include "Engine/Resources.hpp"
 #include "PlayScene.hpp"
@@ -29,7 +31,7 @@ void StageSelectScene::Initialize() {
     if (!curStage) curStage = 1;
     songData.clear();
     scoreboardData.clear();
-    int sbDataCount = 0;
+    sbDataCount = 0;
 
     ReadSongData();
     ReadScoreboard(curStage);
@@ -56,24 +58,12 @@ void StageSelectScene::Initialize() {
     AddNewObject(new Engine::Label("Back", "pirulen.ttf", 36, halfW - 175, halfH * 3 / 2 + 87.5, 0, 0, 0, 255, 0.5, 0.5));
 
     // song info
-    AddNewObject(new Engine::Label(songData[curStage - 1].first + " - " + songData[curStage - 1].second, "pirulen.ttf", 60, 800, 100, 255, 255, 255, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label(songData[curStage - 1].first + " - " + songData[curStage - 1].second, "pirulen.ttf", 48, 800, 100, 255, 255, 255, 255, 0.5, 0.5));
     AddNewObject(new Engine::Image("stage-select/bg" + std::to_string(curStage) + ".png", 800, 200, 700, 393.75, 0.5, 0));
 
     // scoreboard
     AddNewObject(new Engine::Label("Leaderboard", "pirulen.ttf", 28, 1200, 200, 255, 255, 255, 255, 0, 0));
-    for (auto data : scoreboardData) {
-        if (sbDataCount < 3) {
-            AddNewObject(new Engine::Label(data.first, "pirulen.ttf", 36, 1200, 250 + sbDataCount * 120, 255, 255, 255, 255, 0, 0));
-            std::sprintf(sbBuf, "%08d", data.second);
-            AddNewObject(new Engine::Label(sbBuf, "pirulen.ttf", 36, 1200, 300 + sbDataCount * 120, 255, 255, 255, 255, 0, 0));
-            sbDataCount++;
-        }
-    }
-    // if records < 3
-    for (; sbDataCount < 3; sbDataCount++) {
-        AddNewObject(new Engine::Label("-", "pirulen.ttf", 36, 1200, 250 + sbDataCount * 120, 255, 255, 255, 255, 0, 0));
-        AddNewObject(new Engine::Label("00000000", "pirulen.ttf", 36, 1200, 300 + sbDataCount * 120, 255, 255, 255, 255, 0, 0));
-    }
+    DrawScoreboard();
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
     bgmInstance = AudioHelper::PlaySample("song" + std::to_string(curStage) + ".mp3", true, AudioHelper::BGMVolume);
@@ -90,7 +80,7 @@ void StageSelectScene::BackOnClick(int num) {
 void StageSelectScene::PlayOnClick(int num) {
     PlayScene *scene = dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetScene("play"));
     scene->MapId = num;
-    curStage = 1;
+    curStage = num;
     Engine::GameEngine::GetInstance().ChangeScene("play");
 }
 void StageSelectScene::PrevOnClick(int num) {
@@ -109,22 +99,41 @@ void StageSelectScene::NextOnClick(int num) {
 void StageSelectScene::ReadSongData() {
     std::string filename = std::string("Resource/songlist.txt");
     std::string name, author;
+    int pos;
     songData.clear();
     std::ifstream fin(filename);
     while (fin >> name >> author) {
+        std::replace(name.begin(), name.end(), '_', ' ');
+        std::replace(author.begin(), author.end(), '_', ' ');
         songData.push_back({name, author});
     }
     fin.close();
 }
 
 void StageSelectScene::ReadScoreboard(int num) {
-    std::string filename = std::string("Resource/scoreboard" + std::to_string(num) + ".txt");
+    std::string filename = std::string("../Resource/scoreboard" + std::to_string(num) + ".txt");
     std::string name;
     int score;
     scoreboardData.clear();
     std::ifstream fin(filename);
     while (fin >> name >> score) {
         scoreboardData.insert({name, score});
+    }
+}
+
+void StageSelectScene::DrawScoreboard() {
+    for (auto data : scoreboardData) {
+        if (sbDataCount < 3) {
+            AddNewObject(new Engine::Label(data.first, "pirulen.ttf", 36, 1200, 250 + sbDataCount * 120, 255, 255, 255, 255, 0, 0));
+            std::sprintf(sbBuf, "%08d", data.second);
+            AddNewObject(new Engine::Label(sbBuf, "pirulen.ttf", 36, 1200, 300 + sbDataCount * 120, 255, 255, 255, 255, 0, 0));
+            sbDataCount++;
+        }
+    }
+    // if records < 3
+    for (; sbDataCount < 3; sbDataCount++) {
+        AddNewObject(new Engine::Label("-", "pirulen.ttf", 36, 1200, 250 + sbDataCount * 120, 255, 255, 255, 255, 0, 0));
+        AddNewObject(new Engine::Label("00000000", "pirulen.ttf", 36, 1200, 300 + sbDataCount * 120, 255, 255, 255, 255, 0, 0));
     }
 }
 

@@ -120,14 +120,13 @@ void PlayScene::Update(float deltaTime) {
                     BulletGroup->AddNewObject(new FireBullet(Engine::Point(24 * BlockSize, bPos), Engine::Point(-1, 0), 0.0, bSpeed));
                     rep++;
                 }
+                else break;
             }
 
             for (i = rep; i > 0; i--) {
                 bulletData.pop_front();
             }
         }
-        lives = player->getHp();
-        UILives->Text = std::string("Life ") + std::to_string(lives);
         if (player->alive == false)
             Engine::GameEngine::GetInstance().ChangeScene("lose");
 
@@ -137,15 +136,18 @@ void PlayScene::Update(float deltaTime) {
             auto [nTiming, nLine, nType, nMult] = cur_note;
             int aprTiming = nTiming - duration * 1000 / nMult;
             if (ticks * 1000 >= aprTiming) {
+                Engine::LOG(Engine::INFO) << "current timing, appear timing: " << ticks * 1000 << ", " << aprTiming;
                 noteData.pop_front();
+                // adjust the delay of note creation
+                float aprDiff = (ticks * 1000 - aprTiming) * ((sliderSize - noteSize) / duration) * nMult / 1000;
                 switch (nType) {
                     case 1:
                         NoteGroup->AddNewObject(new RedNote(aprTiming, nTiming, nLine, (sliderSize - noteSize) / duration, nMult, \
-                                                            Engine::Point(24 * BlockSize, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
+                                                            Engine::Point(24 * BlockSize - aprDiff, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
                         break;
                     case 2:
-                        NoteGroup->AddNewObject(new BlueNote(aprTiming, nTiming, nLine, (sliderSize - noteSize) / duration, nMult, \
-                                                            Engine::Point(24 * BlockSize, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
+                        NoteGroup->AddNewObject(new BlueNote(aprTiming * nMult, nTiming, nLine, (sliderSize - noteSize) / duration, nMult, \
+                                                            Engine::Point(24 * BlockSize - aprDiff, 200 + nLine * 450 + 75), Engine::Point(-1, 0)));
                         break;
                     default:
                         continue;
@@ -282,7 +284,7 @@ void PlayScene::ReadNote() {
     noteData.clear();
     std::ifstream fin(filename);
     fin >> MapBPM;
-    duration = MapBPM / 60;
+    duration = 60 / (MapBPM / 4);
     while (fin >> timing >> line >> type >> mult) {
         noteData.push_back({timing, line, type, mult});
         // Engine::LOG(Engine::INFO) << "Note loaded now: " << timing << ", " << type << ", " << mult;
@@ -306,7 +308,6 @@ void PlayScene::HitObject(int curTiming, int type) {
     Note *FirstNote = nullptr;
     int hitDiff = INT_MAX;
 
-    Engine::LOG(Engine::INFO) << "curret have " << NoteGroup->GetObjects().size() << "notes";
     if (NoteGroup->GetObjects().size()) {
         auto obj = NoteGroup->GetObjects().front();
         FirstNote = dynamic_cast<Note*>(obj);
@@ -323,7 +324,7 @@ void PlayScene::HitObject(int curTiming, int type) {
                     PFcount++;
                     EffectGroup->AddNewObject(new PerfectEffect(110, 200 + 75));
                     EffectGroup->AddNewObject(new PerfectEffect(110, 650 + 75));
-                    Engine::LOG(Engine::INFO) << "perfect! " << curTiming << ", " << FirstNote->getHitTiming();
+                    // Engine::LOG(Engine::INFO) << "perfect! " << curTiming << ", " << FirstNote->getHitTiming();
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                     gamescore += 300 + 300 * (combo / 10);
                 }
@@ -334,7 +335,7 @@ void PlayScene::HitObject(int curTiming, int type) {
                     GRcount++;
                     EffectGroup->AddNewObject(new GreatEffect(110, 200 + 75));
                     EffectGroup->AddNewObject(new GreatEffect(110, 650 + 75));
-                    Engine::LOG(Engine::INFO) << "great! " << curTiming << ", " << FirstNote->getHitTiming();
+                    // Engine::LOG(Engine::INFO) << "great! " << curTiming << ", " << FirstNote->getHitTiming();
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                     gamescore += 150 + 150 * (combo / 10);
                 }
@@ -344,7 +345,7 @@ void PlayScene::HitObject(int curTiming, int type) {
                     MScount++;
                     EffectGroup->AddNewObject(new MissEffect(110, 200 + 75));
                     EffectGroup->AddNewObject(new MissEffect(110, 650 + 75));
-                    Engine::LOG(Engine::INFO) << "miss (late)! " << curTiming << ", " << FirstNote->getHitTiming();
+                    // Engine::LOG(Engine::INFO) << "miss (late)! " << curTiming << ", " << FirstNote->getHitTiming();
                     NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                     AudioHelper::PlayAudio("miss.mp3");
                 }
@@ -355,7 +356,7 @@ void PlayScene::HitObject(int curTiming, int type) {
                 MScount++;
                 EffectGroup->AddNewObject(new MissEffect(110, 200 + 75));
                 EffectGroup->AddNewObject(new MissEffect(110, 650 + 75));
-                Engine::LOG(Engine::INFO) << "miss! " << curTiming << ", " << FirstNote->getHitTiming();
+                // Engine::LOG(Engine::INFO) << "miss! " << curTiming << ", " << FirstNote->getHitTiming();
                 NoteGroup->RemoveObject(FirstNote->GetObjectIterator());
                 AudioHelper::PlayAudio("miss.mp3");
             }

@@ -13,18 +13,6 @@
 },
 {
   "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
-  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Enemy\\Enemy.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Enemy\\Enemy.cpp",
-  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Enemy/Enemy.cpp",
-  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/Enemy.cpp.obj"
-},
-{
-  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
-  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Enemy\\SoldierEnemy.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Enemy\\SoldierEnemy.cpp",
-  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Enemy/SoldierEnemy.cpp",
-  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Enemy/SoldierEnemy.cpp.obj"
-},
-{
-  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
   "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Engine\\Allegro5Exception.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Engine\\Allegro5Exception.cpp",
   "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Engine/Allegro5Exception.cpp",
   "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Engine/Allegro5Exception.cpp.obj"
@@ -154,12 +142,6 @@
   "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Scene\\SettingsScene.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Scene\\SettingsScene.cpp",
   "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Scene/SettingsScene.cpp",
   "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Scene/SettingsScene.cpp.obj"
-},
-{
-  "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
-  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Scene\\ScoreboardScene.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Scene\\ScoreboardScene.cpp",
-  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Scene/ScoreboardScene.cpp",
-  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Scene/ScoreboardScene.cpp.obj"
 },
 {
   "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",

@@ -37,7 +37,7 @@ void Note::Update(float deltaTime) {
         PlayScene::MScount++;
         scene->EffectGroup->AddNewObject(new MissEffect(110, 200 + 75));
         scene->EffectGroup->AddNewObject(new MissEffect(110, 650 + 75));
-        Engine::LOG(Engine::INFO) << "miss! ";
+        // Engine::LOG(Engine::INFO) << "miss! ";
         scene->NoteGroup->RemoveObject(objectIterator);
         AudioHelper::PlayAudio("miss.mp3");
     }

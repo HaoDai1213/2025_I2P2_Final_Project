@@ -16,9 +16,6 @@
 #include "WinScene.hpp"
 
 int entering, count;
-time_t now;
-tm *localnow;
-std::string tmyr, tmmo, tmdy, tmhr, tmmn, tmsc;
 char resultScoreBuf[30];
 char resultAccBuf[30];
 
@@ -123,24 +120,11 @@ void WinScene::OnKeyDown(int keyCode) {
 }
 
 void WinScene::BackOnClick(int stage) {
-    // Get current time
-    now = time(0);
-    localnow = localtime(&now);
-    tmyr = std::to_string(1900 + localnow->tm_year);
-    tmmo = std::to_string(1 + localnow->tm_mon);
-    tmdy = std::to_string(localnow->tm_mday);
-    tmhr = std::to_string(localnow->tm_hour);
-    if (tmhr.size() == 1) tmhr = "0" + tmhr;
-    tmmn = std::to_string(localnow->tm_min);
-    if (tmmn.size() == 1) tmmn = "0" + tmmn;
-    tmsc = std::to_string(localnow->tm_sec);
-    if (tmsc.size() == 1) tmsc = "0" + tmsc;
-    playDate = tmyr + '/' + tmmo + '/' + tmdy;
-    playTime = tmhr + ':' + tmmn + ':' + tmsc;
     // Output to the file
-    std::ofstream out("C:/Users/barry/Desktop/2025_I2P2_TowerDefense-main/Resource/scoreboard.txt", std::ios::app);
+    std::ofstream out("../Resource/scoreboard" \
+                        + std::to_string(dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetScene("play"))->MapId) + ".txt", std::ios::app);
     if (keyStrokes.empty()) keyStrokes = "GUEST";
-    out << playDate << " " << playTime << " " << keyStrokes << " " << Score << std::endl;
+    out << keyStrokes << " " << Score << std::endl;
     out.flush();
     // Change to select scene.
     Engine::GameEngine::GetInstance().ChangeScene("stage-select");

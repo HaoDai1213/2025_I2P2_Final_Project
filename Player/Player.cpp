@@ -13,6 +13,7 @@
 #include "Engine/IScene.hpp"
 #include "Engine/LOG.hpp"
 #include "Scene/PlayScene.hpp"
+#include "UI/Component/Label.hpp"
 
 
 PlayScene *Player::getPlayScene() {
@@ -27,9 +28,11 @@ Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
 }
 
 void Player::Hit(float damage) {
+    PlayScene *scene = getPlayScene();
     hp -= damage;
     Engine::LOG(Engine::INFO) << "Player is hit: " << hp << " hp left";
     AudioHelper::PlayAudio("playerhit.wav");
+    scene->UILives->Text = std::string("Life ") + std::to_string(hp);
     if (hp <= 0) {
         alive = false;
     }

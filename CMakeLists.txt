@@ -19,11 +19,6 @@ add_executable(2025_I2P2_Final_Project
     Bullet/FireBullet.cpp
     Bullet/FireBullet.hpp
 
-    Enemy/Enemy.cpp
-    Enemy/Enemy.hpp
-    Enemy/SoldierEnemy.cpp
-    Enemy/SoldierEnemy.hpp
-
     Engine/Allegro5Exception.cpp
     Engine/Allegro5Exception.hpp
     Engine/AudioHelper.cpp
@@ -71,8 +66,6 @@ add_executable(2025_I2P2_Final_Project
     Scene/WinScene.hpp
     Scene/SettingsScene.cpp
     Scene/SettingsScene.hpp
-    Scene/ScoreboardScene.cpp
-    Scene/ScoreboardScene.hpp
 
     UI/Animation/DirtyEffect.cpp
     UI/Animation/DirtyEffect.hpp

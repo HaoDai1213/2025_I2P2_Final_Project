@@ -18,10 +18,11 @@ class StageSelectScene final : public Engine::IScene {
 private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
     int maxStage;
+    int sbDataCount;
 
 public:
     std::vector<std::pair<std::string, std::string>> songData;
-    std::set<std::pair<std::string, int>, cmp> scoreboardData;
+    std::multiset<std::pair<std::string, int>, cmp> scoreboardData;
     explicit StageSelectScene() = default;
     void Initialize() override;
     void Terminate() override;
@@ -31,6 +32,7 @@ public:
     void NextOnClick(int num);
     void ReadSongData();
     void ReadScoreboard(int num);
+    void DrawScoreboard();
 
     void BGMSlideOnValueChanged(float value);
     void SFXSlideOnValueChanged(float value);

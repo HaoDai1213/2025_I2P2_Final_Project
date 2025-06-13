@@ -14,7 +14,7 @@ class PlayScene;
 class Player : public Engine::Sprite {
 protected:
     float speed;
-    float hp;
+    int hp;
     PlayScene *getPlayScene();
 
 public:
