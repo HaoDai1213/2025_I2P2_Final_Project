@@ -56,7 +56,7 @@ void StartScene::Initialize() {
         login = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", w - 330, h - 120, 300, 100);
         login->SetOnClickCallback(std::bind(&StartScene::LoginOnClick, this, 2));
         AddNewControlObject(login);
-        AddNewObject(UILogin = new Engine::Label("Login", "pirulen.ttf", 32, w - 180, h - 67.5, 255, 255, 255, 255, 0.5, 0.5));
+        AddNewObject(UILogin = new Engine::Label("Login", "pirulen.ttf", 36, w - 180, h - 67.5, 255, 255, 255, 255, 0.5, 0.5));
     }
 
     else if (logged) {

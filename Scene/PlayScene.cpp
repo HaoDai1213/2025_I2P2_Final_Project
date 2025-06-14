@@ -27,6 +27,8 @@
 #include "UI/Animation/GreatEffect.hpp"
 #include "UI/Animation/PerfectEffect.hpp"
 #include "UI/Component/Label.hpp"
+#include "UI/Component/ImageButton.hpp"
+#include "UI/Component/Label.hpp"
 
 bool PlayScene::DebugMode = false;
 const std::vector<Engine::Point> PlayScene::directions = { Engine::Point(-1, 0), Engine::Point(0, -1), Engine::Point(1, 0), Engine::Point(0, 1) };
@@ -50,6 +52,12 @@ float PlayScene::accuracy;
 int rep;
 char scoreBuf[30];
 char accBuf[30];
+Engine::ImageButton *cntbtn;
+Engine::ImageButton *rtbtn;
+Engine::ImageButton *bkbtn;
+Engine::Label *cntlb;
+Engine::Label *rtlb;
+Engine::Label *bklb;
 
 void PlayScene::Initialize() {
     keyState.clear();
@@ -67,13 +75,15 @@ void PlayScene::Initialize() {
     PFcount = 0;
     GRcount = 0;
     MScount = 0;
+    pause = false;
     // Add groups from bottom to top.
     AddNewControlObject(UIGroup = new Group());
-    AddNewObject(GroundEffectGroup = new Group());
     AddNewObject(DebugIndicatorGroup = new Group());
     AddNewObject(BulletGroup = new Group());
     AddNewObject(EffectGroup = new Group());
     AddNewObject(NoteGroup = new Group());
+    AddNewObject(PlayerGroup = new Group());
+    AddNewObject(PauseGroup = new Group());
 
     ReadBullet();
     ReadNote();
@@ -91,18 +101,16 @@ void PlayScene::Initialize() {
     // Preload Lose Scene
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     // Start BGM.
-    bgmId = AudioHelper::PlayBGM("song" + std::to_string(MapId) + ".mp3");
+    bgmInstance = AudioHelper::PlaySample("song" + std::to_string(MapId) + ".mp3", false, AudioHelper::BGMVolume, 0);
 }
 void PlayScene::Terminate() {
-    AudioHelper::StopBGM(bgmId);
+    AudioHelper::StopSample(bgmInstance);
+    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
 }
 void PlayScene::Update(float deltaTime) {
     // If we use deltaTime directly, then we might have Bullet-through-paper problem.
     // Reference: Bullet-Through-Paper
-    if (SpeedMult == 0) {
-
-    }
     for (int i = 0; i < SpeedMult; i++) {
         IScene::Update(deltaTime);
         // Check if we should create new enemy.
@@ -135,7 +143,7 @@ void PlayScene::Update(float deltaTime) {
             auto [nTiming, nLine, nType, nMult] = cur_note;
             int aprTiming = nTiming - duration * 1000 / nMult;
             if (ticks * 1000 >= aprTiming) {
-                Engine::LOG(Engine::INFO) << "current timing, appear timing: " << ticks * 1000 << ", " << aprTiming;
+                // Engine::LOG(Engine::INFO) << "current timing, appear timing: " << ticks * 1000 << ", " << aprTiming;
                 noteData.pop_front();
                 // adjust the delay of note creation
                 float aprDiff = (ticks * 1000 - aprTiming) * ((sliderSize - noteSize) / duration) * nMult / 1000;
@@ -180,17 +188,19 @@ void PlayScene::Update(float deltaTime) {
     }
 
     // player
-    if (keyState['W'] && player->Position.y - playerSpeed >= 350 + 20) {
-        player->Position.y -= playerSpeed;
-    }
-    if (keyState['A'] && player->Position.x - playerSpeed >= 20) {
-        player->Position.x -= playerSpeed;
-    }
-    if (keyState['S'] && player->Position.y + playerSpeed <= 650 - 20) {
-        player->Position.y += playerSpeed;
-    }
-    if (keyState['D'] && player->Position.x + playerSpeed <= 25 * BlockSize - 20) {
-        player->Position.x += playerSpeed;
+    if (!pause) {
+        if (keyState['W'] && player->Position.y - playerSpeed >= 350 + 20) {
+            player->Position.y -= playerSpeed;
+        }
+        if (keyState['A'] && player->Position.x - playerSpeed >= 20) {
+            player->Position.x -= playerSpeed;
+        }
+        if (keyState['S'] && player->Position.y + playerSpeed <= 650 - 20) {
+            player->Position.y += playerSpeed;
+        }
+        if (keyState['D'] && player->Position.x + playerSpeed <= 25 * BlockSize - 20) {
+            player->Position.x += playerSpeed;
+        }
     }
 }
 void PlayScene::Draw() const {
@@ -244,6 +254,10 @@ void PlayScene::OnKeyDown(int keyCode) {
     }
     else if (keyCode == ALLEGRO_KEY_F || keyCode == ALLEGRO_KEY_J) {
         isBlueHit = true;
+    }
+    else if (keyCode == ALLEGRO_KEY_ESCAPE) {
+        Paused();
+        pause = true;
     }
 }
 
@@ -366,4 +380,53 @@ void PlayScene::HitObject(int curTiming, int type) {
             }
         }
     }
+}
+
+void PlayScene::Paused() {
+    if (!pause) {
+        Engine::ImageButton *btn;
+        SpeedMult = 0;
+        samplePos = AudioHelper::GetSamplePosition(bgmInstance);
+        AudioHelper::StopSample(bgmInstance);
+        PauseGroup->AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
+        PauseGroup->AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
+        PauseGroup->AddNewObject(new Engine::Label("Pause", "pirulen.ttf", 60, 800, 450 / 4 - 10, 127, 255, 212, 255, 0.5, 0.5));
+
+        cntbtn = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", 800 - 200, 260, 400, 400 / 3);
+        cntbtn->SetOnClickCallback(std::bind(&PlayScene::ContinueOnClick, this, MapId));
+        AddNewControlObject(cntbtn);
+        AddNewObject(cntlb = new Engine::Label("Continue", "pirulen.ttf", 36, 800, 325, 255, 255, 255, 255, 0.5, 0.5));
+
+        rtbtn = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", 800 - 200, 450 - 15, 400, 400 / 3);
+        rtbtn->SetOnClickCallback(std::bind(&PlayScene::RetryOnClick, this, MapId));
+        AddNewControlObject(rtbtn);
+        AddNewObject(rtlb = new Engine::Label("Retry", "pirulen.ttf", 48, 800, 450 + 50, 255, 255, 255, 255, 0.5, 0.5));
+
+        bkbtn = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", 800 - 200, 450 * 3 / 2 - 65, 400, 400 / 3);
+        bkbtn->SetOnClickCallback(std::bind(&PlayScene::BackOnClick, this, 2));
+        AddNewControlObject(bkbtn);
+        AddNewObject(bklb = new Engine::Label("Back", "pirulen.ttf", 48, 800, 450 * 3 / 2, 255, 255, 255, 255, 0.5, 0.5));
+    }
+}
+
+void PlayScene::BackOnClick(int num) {
+    Engine::GameEngine::GetInstance().ChangeScene("stage-select");
+}
+
+void PlayScene::RetryOnClick(int num) {
+    Engine::GameEngine::GetInstance().ChangeScene("play");
+}
+
+void PlayScene::ContinueOnClick(int num) {
+    bgmInstance = AudioHelper::PlaySample("song" + std::to_string(MapId) + ".mp3", false, AudioHelper::BGMVolume, 0);
+    AudioHelper::SetSamplePosition(bgmInstance, samplePos);
+    pause = false;
+    SpeedMult = 1;
+    PauseGroup->Clear();
+    RemoveControlObject(cntbtn->GetControlIterator(), cntbtn->GetObjectIterator());
+    RemoveObject(cntlb->GetObjectIterator());
+    RemoveControlObject(rtbtn->GetControlIterator(), rtbtn->GetObjectIterator());
+    RemoveObject(rtlb->GetObjectIterator());
+    RemoveControlObject(bkbtn->GetControlIterator(), bkbtn->GetObjectIterator());
+    RemoveObject(bklb->GetObjectIterator());
 }

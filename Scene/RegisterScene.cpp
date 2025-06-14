@@ -58,7 +58,7 @@ void RegisterScene::Initialize() {
     btn = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", halfW + 50, h - 165, 400, 400 / 3);
     btn->SetOnClickCallback(std::bind(&RegisterScene::RegisterOnClick, this, 2));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Register", "pirulen.ttf", 48, halfW + 250, h - 100, 255, 255, 255, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Register", "pirulen.ttf", 40, halfW + 250, h - 100, 255, 255, 255, 255, 0.5, 0.5));
 
     bgm = AudioHelper::PlayBGM("default.mp3");
 }

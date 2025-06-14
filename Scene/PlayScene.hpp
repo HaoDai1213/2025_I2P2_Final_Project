@@ -22,11 +22,12 @@ namespace Engine {
 
 class PlayScene final : public Engine::IScene {
 private:
-    ALLEGRO_SAMPLE_ID bgmId;
-
+    std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
 protected:
     int lives;
     int SpeedMult;
+    bool pause;
+    unsigned int samplePos;
 
 public:
     static bool DebugMode;
@@ -53,12 +54,13 @@ public:
     static int GRcount;
     static int MScount;
     // Map tiles.
-    Group *GroundEffectGroup;
     Group *DebugIndicatorGroup;
     Group *BulletGroup;
     Group *EffectGroup;
     Group *UIGroup;
     Group *NoteGroup;
+    Group *PlayerGroup;
+    Group *PauseGroup;
     Engine::Label *UIScore;
     Engine::Label *UIAcc;
     Engine::Label *UILives;
@@ -84,6 +86,10 @@ public:
     void ReadNote();
     void ConstructUI();
     void HitObject(int timing, int type);
+    void Paused();
+    void BackOnClick(int num);
+    void RetryOnClick(int num);
+    void ContinueOnClick(int num);
     // void ModifyReadMapTiles();
 };
 

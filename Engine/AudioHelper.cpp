@@ -58,6 +58,13 @@ void AudioHelper::ChangeSamplePosition(std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> 
     if (!al_set_sample_instance_position(sample_instance.get(), sample_index))
         throw Engine::Allegro5Exception(("failed to change sample position to " + std::to_string(position) + " s").c_str());
 }
+unsigned int AudioHelper::GetSamplePosition(std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> sample_instance) {
+    return al_get_sample_instance_position(sample_instance.get());
+}
+void AudioHelper::SetSamplePosition(std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> sample_instance, unsigned int position) {
+    if (!al_set_sample_instance_position(sample_instance.get(), position))
+        throw Engine::Allegro5Exception(("failed to set sample position to " + std::to_string(position) + " s").c_str());
+}
 unsigned int AudioHelper::GetSampleLength(std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> sample_instance) {
     // Get sample frequency (samples per second)
     return al_get_sample_instance_length(sample_instance.get()) / al_get_sample_instance_frequency(sample_instance.get());
