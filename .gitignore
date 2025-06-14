@@ -7,13 +7,11 @@
 *.dll
 !allegro_monolith-5.2.dll
 build
-Resource
 
 # MacOS
 .DS_Store
 
 # Others
 log.txt
-scoreboard.txt
 build/log.txt
 /build
