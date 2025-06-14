@@ -145,15 +145,15 @@
 },
 {
   "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
-  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\UI\\Animation\\DirtyEffect.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\UI\\Animation\\DirtyEffect.cpp",
-  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/UI/Animation/DirtyEffect.cpp",
-  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/DirtyEffect.cpp.obj"
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Scene\\LoginScene.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Scene\\LoginScene.cpp",
+  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Scene/LoginScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Scene/LoginScene.cpp.obj"
 },
 {
   "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",
-  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\UI\\Animation\\ExplosionEffect.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\UI\\Animation\\ExplosionEffect.cpp",
-  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/UI/Animation/ExplosionEffect.cpp",
-  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/ExplosionEffect.cpp.obj"
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_Final_Project.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_Final_Project.dir\\Scene\\RegisterScene.cpp.obj -c C:\\Users\\barry\\Desktop\\2025_I2P2_Final_Project\\Scene\\RegisterScene.cpp",
+  "file": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/Scene/RegisterScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_Final_Project.dir/Scene/RegisterScene.cpp.obj"
 },
 {
   "directory": "C:/Users/barry/Desktop/2025_I2P2_Final_Project/build",

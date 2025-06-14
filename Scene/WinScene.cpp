@@ -9,6 +9,7 @@
 #include "Engine/GameEngine.hpp"
 #include "Engine/Point.hpp"
 #include "Engine/LOG.hpp"
+#include "StartScene.h"
 #include "PlayScene.hpp"
 #include "UI/Component/Image.hpp"
 #include "UI/Component/ImageButton.hpp"
@@ -24,8 +25,6 @@ void WinScene::Initialize() {
     entering = 1;
     ticks = 0;
     count = 0;
-    playDate.clear();
-    playTime.clear();
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -35,15 +34,20 @@ void WinScene::Initialize() {
     Acc = PlayScene::accuracy * 100;
     std::sprintf(resultScoreBuf, "%08d", Score);
     std::sprintf(resultAccBuf, "%.2f%%", Acc);
+    curId = dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetScene("play"))->MapId;
 
-    keyStrokes.clear();
+    // bg
+    AddNewObject(new Engine::Image("stage-select/bg" + std::to_string(curId) + ".png", 800, 450, 1600, 900, 0.5, 0.5));
+    AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
+    AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
+    AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
 
     AddNewObject(new Engine::Label("RESULT", "pirulen.ttf", 60, halfW, halfH / 4 - 10, 127, 255, 212, 255, 0.5, 0.5));
     Engine::ImageButton *btn;
-    btn = new Engine::ImageButton("win/dirt.png", "win/floor.png", halfW - 200, halfH * 7 / 4 - 50, 400, 100);
+    btn = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", halfW - 200, halfH * 7 / 4 - 65, 400, 400 / 3);
     btn->SetOnClickCallback(std::bind(&WinScene::BackOnClick, this, 2));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW, halfH * 7 / 4, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW, halfH * 7 / 4, 255, 255, 255, 255, 0.5, 0.5));
 
     AddNewObject(new Engine::Label("Score", "pirulen.ttf", 48, halfW - 600, halfH / 2, 255, 255, 255, 255, 0, 0.5));
     AddNewObject(new Engine::Label(resultScoreBuf, "pirulen.ttf", 48, halfW - 20, halfH / 2, 224, 255, 255, 255, 1, 0.5));
@@ -89,11 +93,6 @@ void WinScene::Terminate() {
 
 void WinScene::Update(float deltaTime) {
     ticks += deltaTime;
-    // ?
-    if (ticks > 4 && ticks < 100 &&
-        dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetScene("play"))->MapId == 2) {
-        ticks = 100;
-    }
 }
 
 void WinScene::OnKeyDown(int keyCode) {
@@ -122,9 +121,10 @@ void WinScene::OnKeyDown(int keyCode) {
 void WinScene::BackOnClick(int stage) {
     // Output to the file
     std::ofstream out("../Resource/scoreboard" \
-                        + std::to_string(dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetScene("play"))->MapId) + ".txt", std::ios::app);
-    if (keyStrokes.empty()) keyStrokes = "GUEST";
-    out << keyStrokes << " " << Score << std::endl;
+                        + std::to_string(curId) + ".txt", std::ios::app);
+    std::string name = "GUEST";
+    if (StartScene::logged) name = StartScene::username;
+    out << name << " " << Score << std::endl;
     out.flush();
     // Change to select scene.
     Engine::GameEngine::GetInstance().ChangeScene("stage-select");

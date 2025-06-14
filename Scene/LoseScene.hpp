@@ -7,6 +7,7 @@
 class LoseScene final : public Engine::IScene {
 private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
+    int curId;
 
 public:
     explicit LoseScene() = default;

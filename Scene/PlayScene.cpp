@@ -23,7 +23,6 @@
 #include "Note/BlueNote.hpp"
 #include "Player/Player.hpp"
 #include "PlayScene.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
 #include "UI/Animation/MissEffect.hpp"
 #include "UI/Animation/GreatEffect.hpp"
 #include "UI/Animation/PerfectEffect.hpp"
@@ -292,6 +291,11 @@ void PlayScene::ReadNote() {
 }
 
 void PlayScene::ConstructUI() {
+    // Background
+    UIGroup->AddNewObject(new Engine::Image("stage-select/bg" + std::to_string(MapId) + ".png", 800, 450, 1600, 900, 0.5, 0.5));
+    UIGroup->AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
+    UIGroup->AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
+    UIGroup->AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
     // Text
     UIGroup->AddNewObject(UIScore = new Engine::Label(std::string("Score 00000000"), "pirulen.ttf", 32, 12, 12, 255, 255, 255));
     UIGroup->AddNewObject(UIAcc = new Engine::Label(std::string("Accuracy ") + std::to_string(accuracy * 100), "pirulen.ttf", 24, 12, 56, 255, 255, 255));

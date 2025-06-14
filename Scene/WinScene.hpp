@@ -8,14 +8,11 @@ class WinScene final : public Engine::IScene {
 private:
     float ticks;
     ALLEGRO_SAMPLE_ID bgmId;
-    Engine::Label *nameLabel;
     int Score;
     float Acc;
-    std::string playDate;
-    std::string playTime;
-
+    int curId;
 public:
-    std::string keyStrokes;
+
     explicit WinScene() = default;
     void Initialize() override;
     void Terminate() override;

@@ -7,11 +7,24 @@
 
 #include <allegro5/allegro_audio.h>
 #include <memory>
+#include <string>
 
 #include "Engine/IScene.hpp"
+
+namespace Engine {
+    class Label;
+    class Image;
+}
+
 class StartScene final : public Engine::IScene {
+private:
+    ALLEGRO_SAMPLE_ID bgm;
 public:
-    bool logged;
+    Engine::Label *UILogin;
+    Engine::Label *UILogout;
+    Engine::Label *UIReg;
+    static bool logged;
+    static std::string username;
     explicit StartScene() = default;
     void Initialize() override;
     void Terminate() override;

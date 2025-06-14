@@ -37,29 +37,33 @@ void StageSelectScene::Initialize() {
     ReadScoreboard(curStage);
     maxStage = songData.size();
 
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 675, halfH * 3 / 2 + 50, 300, 75);
-    btn->SetOnClickCallback(std::bind(&StageSelectScene::PrevOnClick, this, 1));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Prev", "pirulen.ttf", 36, halfW - 525, halfH * 3 / 2 + 87.5, 0, 0, 0, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW + 375, halfH * 3 / 2 + 50, 300, 75);
-    btn->SetOnClickCallback(std::bind(&StageSelectScene::NextOnClick, this, 1));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Next", "pirulen.ttf", 36, halfW + 525, halfH * 3 / 2 + 87.5, 0, 0, 0, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW + 25, halfH * 3 / 2 + 50, 300, 75);
-    btn->SetOnClickCallback(std::bind(&StageSelectScene::PlayOnClick, this, curStage));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Play", "pirulen.ttf", 36, halfW + 175, halfH * 3 / 2 + 87.5, 0, 0, 0, 255, 0.5, 0.5));
-
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 325, halfH * 3 / 2 + 50, 300, 75);
-    btn->SetOnClickCallback(std::bind(&StageSelectScene::BackOnClick, this, 1));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "pirulen.ttf", 36, halfW - 175, halfH * 3 / 2 + 87.5, 0, 0, 0, 255, 0.5, 0.5));
-
     // song info
+    AddNewObject(new Engine::Image("stage-select/bg" + std::to_string(curStage) + ".png", 800, 450, 1600, 900, 0.5, 0.5));
+    AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
+    AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
+    AddNewObject(new Engine::Image("stage-select/half-black.png", 800, 450, 1800, 900, 0.5, 0.5));
     AddNewObject(new Engine::Label(songData[curStage - 1].first + " - " + songData[curStage - 1].second, "pirulen.ttf", 48, 800, 100, 255, 255, 255, 255, 0.5, 0.5));
     AddNewObject(new Engine::Image("stage-select/bg" + std::to_string(curStage) + ".png", 800, 200, 700, 393.75, 0.5, 0));
+
+    btn = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", halfW - 675, halfH * 3 / 2 + 37.5, 300, 100);
+    btn->SetOnClickCallback(std::bind(&StageSelectScene::PrevOnClick, this, 1));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Prev", "pirulen.ttf", 36, halfW - 525, halfH * 3 / 2 + 87.5, 255, 255, 255, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", halfW + 375, halfH * 3 / 2 + 37.5, 300, 100);
+    btn->SetOnClickCallback(std::bind(&StageSelectScene::NextOnClick, this, 1));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Next", "pirulen.ttf", 36, halfW + 525, halfH * 3 / 2 + 87.5, 255, 255, 255, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", halfW + 25, halfH * 3 / 2 + 37.5, 300, 100);
+    btn->SetOnClickCallback(std::bind(&StageSelectScene::PlayOnClick, this, curStage));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Play", "pirulen.ttf", 36, halfW + 175, halfH * 3 / 2 + 87.5, 255, 255, 255, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/button.png", "stage-select/button-select.png", halfW - 325, halfH * 3 / 2 + 37.5, 300, 100);
+    btn->SetOnClickCallback(std::bind(&StageSelectScene::BackOnClick, this, 1));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Back", "pirulen.ttf", 36, halfW - 175, halfH * 3 / 2 + 87.5, 255, 255, 255, 255, 0.5, 0.5));
 
     // scoreboard
     AddNewObject(new Engine::Label("Leaderboard", "pirulen.ttf", 28, 1200, 200, 255, 255, 255, 255, 0, 0));

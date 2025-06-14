@@ -560,6 +560,30 @@ Player/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Player/Player.cpp.s
 .PHONY : Player/Player.cpp.s
 
+Scene/LoginScene.obj: Scene/LoginScene.cpp.obj
+.PHONY : Scene/LoginScene.obj
+
+# target to build an object file
+Scene/LoginScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/LoginScene.cpp.obj
+.PHONY : Scene/LoginScene.cpp.obj
+
+Scene/LoginScene.i: Scene/LoginScene.cpp.i
+.PHONY : Scene/LoginScene.i
+
+# target to preprocess a source file
+Scene/LoginScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/LoginScene.cpp.i
+.PHONY : Scene/LoginScene.cpp.i
+
+Scene/LoginScene.s: Scene/LoginScene.cpp.s
+.PHONY : Scene/LoginScene.s
+
+# target to generate assembly for a file
+Scene/LoginScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/LoginScene.cpp.s
+.PHONY : Scene/LoginScene.cpp.s
+
 Scene/LoseScene.obj: Scene/LoseScene.cpp.obj
 .PHONY : Scene/LoseScene.obj
 
@@ -607,6 +631,30 @@ Scene/PlayScene.s: Scene/PlayScene.cpp.s
 Scene/PlayScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/PlayScene.cpp.s
 .PHONY : Scene/PlayScene.cpp.s
+
+Scene/RegisterScene.obj: Scene/RegisterScene.cpp.obj
+.PHONY : Scene/RegisterScene.obj
+
+# target to build an object file
+Scene/RegisterScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/RegisterScene.cpp.obj
+.PHONY : Scene/RegisterScene.cpp.obj
+
+Scene/RegisterScene.i: Scene/RegisterScene.cpp.i
+.PHONY : Scene/RegisterScene.i
+
+# target to preprocess a source file
+Scene/RegisterScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/RegisterScene.cpp.i
+.PHONY : Scene/RegisterScene.cpp.i
+
+Scene/RegisterScene.s: Scene/RegisterScene.cpp.s
+.PHONY : Scene/RegisterScene.s
+
+# target to generate assembly for a file
+Scene/RegisterScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/RegisterScene.cpp.s
+.PHONY : Scene/RegisterScene.cpp.s
 
 Scene/SettingsScene.obj: Scene/SettingsScene.cpp.obj
 .PHONY : Scene/SettingsScene.obj
@@ -703,54 +751,6 @@ Scene/WinScene.s: Scene/WinScene.cpp.s
 Scene/WinScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/Scene/WinScene.cpp.s
 .PHONY : Scene/WinScene.cpp.s
-
-UI/Animation/DirtyEffect.obj: UI/Animation/DirtyEffect.cpp.obj
-.PHONY : UI/Animation/DirtyEffect.obj
-
-# target to build an object file
-UI/Animation/DirtyEffect.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/DirtyEffect.cpp.obj
-.PHONY : UI/Animation/DirtyEffect.cpp.obj
-
-UI/Animation/DirtyEffect.i: UI/Animation/DirtyEffect.cpp.i
-.PHONY : UI/Animation/DirtyEffect.i
-
-# target to preprocess a source file
-UI/Animation/DirtyEffect.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/DirtyEffect.cpp.i
-.PHONY : UI/Animation/DirtyEffect.cpp.i
-
-UI/Animation/DirtyEffect.s: UI/Animation/DirtyEffect.cpp.s
-.PHONY : UI/Animation/DirtyEffect.s
-
-# target to generate assembly for a file
-UI/Animation/DirtyEffect.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/DirtyEffect.cpp.s
-.PHONY : UI/Animation/DirtyEffect.cpp.s
-
-UI/Animation/ExplosionEffect.obj: UI/Animation/ExplosionEffect.cpp.obj
-.PHONY : UI/Animation/ExplosionEffect.obj
-
-# target to build an object file
-UI/Animation/ExplosionEffect.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/ExplosionEffect.cpp.obj
-.PHONY : UI/Animation/ExplosionEffect.cpp.obj
-
-UI/Animation/ExplosionEffect.i: UI/Animation/ExplosionEffect.cpp.i
-.PHONY : UI/Animation/ExplosionEffect.i
-
-# target to preprocess a source file
-UI/Animation/ExplosionEffect.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/ExplosionEffect.cpp.i
-.PHONY : UI/Animation/ExplosionEffect.cpp.i
-
-UI/Animation/ExplosionEffect.s: UI/Animation/ExplosionEffect.cpp.s
-.PHONY : UI/Animation/ExplosionEffect.s
-
-# target to generate assembly for a file
-UI/Animation/ExplosionEffect.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_Final_Project.dir\build.make CMakeFiles/2025_I2P2_Final_Project.dir/UI/Animation/ExplosionEffect.cpp.s
-.PHONY : UI/Animation/ExplosionEffect.cpp.s
 
 UI/Animation/GreatEffect.obj: UI/Animation/GreatEffect.cpp.obj
 .PHONY : UI/Animation/GreatEffect.obj
@@ -1007,12 +1007,18 @@ help:
 	@echo ... Player/Player.obj
 	@echo ... Player/Player.i
 	@echo ... Player/Player.s
+	@echo ... Scene/LoginScene.obj
+	@echo ... Scene/LoginScene.i
+	@echo ... Scene/LoginScene.s
 	@echo ... Scene/LoseScene.obj
 	@echo ... Scene/LoseScene.i
 	@echo ... Scene/LoseScene.s
 	@echo ... Scene/PlayScene.obj
 	@echo ... Scene/PlayScene.i
 	@echo ... Scene/PlayScene.s
+	@echo ... Scene/RegisterScene.obj
+	@echo ... Scene/RegisterScene.i
+	@echo ... Scene/RegisterScene.s
 	@echo ... Scene/SettingsScene.obj
 	@echo ... Scene/SettingsScene.i
 	@echo ... Scene/SettingsScene.s
@@ -1025,12 +1031,6 @@ help:
 	@echo ... Scene/WinScene.obj
 	@echo ... Scene/WinScene.i
 	@echo ... Scene/WinScene.s
-	@echo ... UI/Animation/DirtyEffect.obj
-	@echo ... UI/Animation/DirtyEffect.i
-	@echo ... UI/Animation/DirtyEffect.s
-	@echo ... UI/Animation/ExplosionEffect.obj
-	@echo ... UI/Animation/ExplosionEffect.i
-	@echo ... UI/Animation/ExplosionEffect.s
 	@echo ... UI/Animation/GreatEffect.obj
 	@echo ... UI/Animation/GreatEffect.i
 	@echo ... UI/Animation/GreatEffect.s

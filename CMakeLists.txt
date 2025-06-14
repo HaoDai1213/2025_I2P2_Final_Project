@@ -66,11 +66,11 @@ add_executable(2025_I2P2_Final_Project
     Scene/WinScene.hpp
     Scene/SettingsScene.cpp
     Scene/SettingsScene.hpp
+    Scene/LoginScene.cpp
+    Scene/LoginScene.hpp
+    Scene/RegisterScene.cpp
+    Scene/RegisterScene.hpp
 
-    UI/Animation/DirtyEffect.cpp
-    UI/Animation/DirtyEffect.hpp
-    UI/Animation/ExplosionEffect.cpp
-    UI/Animation/ExplosionEffect.hpp
     UI/Animation/MissEffect.cpp
     UI/Animation/MissEffect.hpp
     UI/Animation/GreatEffect.cpp
