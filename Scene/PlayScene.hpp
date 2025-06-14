@@ -68,7 +68,7 @@ public:
     Engine::Image *imgTarget;
     Engine::Sprite *dangerIndicator;
     Player *player;
-    std::list<std::tuple<int, int, int>> bulletData;
+    std::list<std::tuple<int, float, int>> bulletData;
     std::list<std::tuple<int, int, int, float>> noteData;
     std::map<int, int> keyState;
     static Engine::Point GetClientSize();

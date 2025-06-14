@@ -90,7 +90,7 @@ void PlayScene::Initialize() {
     lastBullet = std::get<0> (bulletData.back()) + 1000 * (1600 / std::get<2> (bulletData.back()));
     lastNote = std::get<0> (noteData.back());
     endTick = (lastBullet > lastNote) ? lastBullet + 3000 : lastNote + 3000;
-    Engine::LOG(Engine::INFO) << "LB, LN: " << lastBullet << ", " << lastNote << ", ET: " << endTick ;
+    // Engine::LOG(Engine::INFO) << "LB, LN: " << lastBullet << ", " << lastNote << ", ET: " << endTick ;
 
     // Things related to player 
     player = new Player("play/player.png", SpawnGridPoint.x * BlockSize, SpawnGridPoint.y * BlockSize);
